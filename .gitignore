@@ -3,6 +3,13 @@
 #my untracked models directory
 **/untrackedModels
 **/abottLouie
+#large sw4 outputs
+*.essi
+*.x
+*.y
+*.z
+*.sw4img
+
 *.hdf5
 *.r
 *.txt
