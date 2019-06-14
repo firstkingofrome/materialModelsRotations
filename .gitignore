@@ -9,7 +9,7 @@
 *.y
 *.z
 *.sw4img
-
+*.tar
 *.hdf5
 *.r
 *.txt
