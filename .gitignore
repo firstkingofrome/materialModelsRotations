@@ -4,6 +4,7 @@
 **/untrackedModels
 **/abottLouie
 #large sw4 outputs
+*.png
 *.essi
 *.x
 *.y
