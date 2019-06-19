@@ -1,0 +1,30 @@
+#!/bin/csh
+
+set PYTHON_BIN = /Users/rodgers7/PYTHON/SW4_POST_PROCESS
+
+# Basin 
+#set RUN = GF_M7.0_s200_L_D1_Basin_8
+#set RUN = GF_M7.0_s200_C_D1_Basin_8
+set RUN = GF_M7.0_s200_R_D1_Basin_8
+set NAME = $RUN
+
+set X1 = 01
+set X2 = 19
+set Y1 = 40
+set Y2 = 40
+
+#foreach RUN ( GF_M7.0_s200_L_D1_Basin_8 )
+foreach RUN ( GF_M7.0_s200_L_D1_Basin_8 GF_M7.0_s200_C_D1_Basin_8 GF_M7.0_s200_R_D1_Basin_8 )
+echo
+echo RUN: $RUN
+
+set NAME = $RUN
+
+cd $RUN/$RUN.sw4output
+
+python3 $PYTHON_BIN/sw4_postprocess_plot_wfs.py $RUN $NAME $X1 $X2 $Y1 $Y2
+
+cd ../..
+# Change directory back up
+end
+# End loop over RUN

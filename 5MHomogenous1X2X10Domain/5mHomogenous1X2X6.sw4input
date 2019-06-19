@@ -1,0 +1,28 @@
+# SW4 input RUN: 1X2X10SimpleSource
+
+
+fileio path=1X2X10SimpleSource.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
+
+
+developer reporttiming=yes
+#GRID
+grid x=1000 y=3000 z=6000 h=5.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
+supergrid gp=30
+time t=20.0 utcstart=01/01/2019:00:00:00.0
+
+
+globalmaterial vpmin=850 vsmin=425
+attenuation phasefreq=2.5 nmech=3 maxfreq=5.3125
+block x1=0.0 x2=1000 y1=0.0 y2=3000 z1=0.0 z2=6000 vp=1600.0 vs=425.0 rho=2000.0 qp=42.5 qs=21.2
+#SOURCE:
+source x=500 y=500 z=5000 t0=0.24715826456623746 type=Gaussian freq=26.703537555513243 m0=5.0e15 strike=90 dip=90 rake=180
+
+
+#PREFILTER STF
+prefilter fc2=10.625 type=lowpass passes=2 order=2
+#OUTPUT INSTRUCTIONS--ESSI
+essioutput file=1X2X10M.SS_ESSI_SMALL xmin=500 xmax=600 ymin=1500 ymax=1600 depth=150
+#SAC OUPPUT INSTRUCTIONS:
+essioutput file=1X2X10M.SS_ESSI_LARGE xmin=0 xmax=1000 ymin=0 ymax=3000 depth=10
+#SAC OUPPUT INSTRUCTIONS:
+rec sta=500_500 x=500 y=500 depth=0 file=500_500
