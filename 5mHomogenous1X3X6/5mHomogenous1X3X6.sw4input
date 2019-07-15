@@ -1,0 +1,136 @@
+# SW4 input RUN: 1X3X6SimpleSource
+
+
+fileio path=1X3X6SimpleSource.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
+
+
+developer reporttiming=yes
+#GRID
+grid x=1000 y=3000 z=6000 h=5.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
+supergrid gp=30
+time t=15.0 utcstart=01/01/2019:00:00:00.0
+
+
+globalmaterial vpmin=850 vsmin=425
+attenuation phasefreq=2.5 nmech=3 maxfreq=5.3125
+block x1=0.0 x2=1000 y1=0.0 y2=3000 z1=0.0 z2=6000 vp=1600.0 vs=425.0 rho=2000.0 qp=42.5 qs=21.2
+#SOURCE:
+source x=500 y=500 z=5000 t0=2.0 type=Gaussian freq=26.703537555513243 m0=5.0e15 strike=90 dip=90 rake=180
+
+
+#PREFILTER STF
+prefilter fc2=10.625 type=lowpass passes=2 order=2
+#OUTPUT INSTRUCTIONS--ESSI
+#essioutput file=1X3X6.SS_ESSI_LARGE xmin=0 xmax=1000 ymin=0 ymax=3000 depth=10
+essioutput file=1X3X6.SS_ESSI_SMALL xmin=500 xmax=700 ymin=1500 ymax=1700 depth=200
+essioutput file=1X3X6.SS_ESSI_SMALL1 xmin=500 xmax=700 ymin=1000 ymax=1200 depth=200
+essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=500 xmax=700 ymin=2000 ymax=2200 depth=200
+essioutput file=1X3X6.SS_ESSI_SMALL3 xmin=500 xmax=700 ymin=2500 ymax=2700 depth=200
+essioutput file=1X3X6M.SS_ESSI_SMALL4 xmin=200 xmax=400 ymin=1000 ymax=1200 depth=200
+#Image ouptuts
+image mode=rho z=0 file=image cycle=0
+image mode=hmax z=0 file=image time=5.0
+image mode=hmax z=0 file=image time=10.0
+image mode=vmax z=0 file=image time=5.0
+image mode=vmax z=0 file=image time=10.0
+#SAC OUPPUT INSTRUCTIONS:
+rec sta=500_500 x=500 y=500 depth=0 file=500_500
+rec sta=500_510 x=500 y=510 depth=0 file=500_510
+rec sta=500_520 x=500 y=520 depth=0 file=500_520
+rec sta=500_530 x=500 y=530 depth=0 file=500_530
+rec sta=500_540 x=500 y=540 depth=0 file=500_540
+rec sta=500_550 x=500 y=550 depth=0 file=500_550
+rec sta=500_560 x=500 y=560 depth=0 file=500_560
+rec sta=500_570 x=500 y=570 depth=0 file=500_570
+rec sta=500_580 x=500 y=580 depth=0 file=500_580
+rec sta=500_590 x=500 y=590 depth=0 file=500_590
+rec sta=510_500 x=510 y=500 depth=0 file=510_500
+rec sta=510_510 x=510 y=510 depth=0 file=510_510
+rec sta=510_520 x=510 y=520 depth=0 file=510_520
+rec sta=510_530 x=510 y=530 depth=0 file=510_530
+rec sta=510_540 x=510 y=540 depth=0 file=510_540
+rec sta=510_550 x=510 y=550 depth=0 file=510_550
+rec sta=510_560 x=510 y=560 depth=0 file=510_560
+rec sta=510_570 x=510 y=570 depth=0 file=510_570
+rec sta=510_580 x=510 y=580 depth=0 file=510_580
+rec sta=510_590 x=510 y=590 depth=0 file=510_590
+rec sta=520_500 x=520 y=500 depth=0 file=520_500
+rec sta=520_510 x=520 y=510 depth=0 file=520_510
+rec sta=520_520 x=520 y=520 depth=0 file=520_520
+rec sta=520_530 x=520 y=530 depth=0 file=520_530
+rec sta=520_540 x=520 y=540 depth=0 file=520_540
+rec sta=520_550 x=520 y=550 depth=0 file=520_550
+rec sta=520_560 x=520 y=560 depth=0 file=520_560
+rec sta=520_570 x=520 y=570 depth=0 file=520_570
+rec sta=520_580 x=520 y=580 depth=0 file=520_580
+rec sta=520_590 x=520 y=590 depth=0 file=520_590
+rec sta=530_500 x=530 y=500 depth=0 file=530_500
+rec sta=530_510 x=530 y=510 depth=0 file=530_510
+rec sta=530_520 x=530 y=520 depth=0 file=530_520
+rec sta=530_530 x=530 y=530 depth=0 file=530_530
+rec sta=530_540 x=530 y=540 depth=0 file=530_540
+rec sta=530_550 x=530 y=550 depth=0 file=530_550
+rec sta=530_560 x=530 y=560 depth=0 file=530_560
+rec sta=530_570 x=530 y=570 depth=0 file=530_570
+rec sta=530_580 x=530 y=580 depth=0 file=530_580
+rec sta=530_590 x=530 y=590 depth=0 file=530_590
+rec sta=540_500 x=540 y=500 depth=0 file=540_500
+rec sta=540_510 x=540 y=510 depth=0 file=540_510
+rec sta=540_520 x=540 y=520 depth=0 file=540_520
+rec sta=540_530 x=540 y=530 depth=0 file=540_530
+rec sta=540_540 x=540 y=540 depth=0 file=540_540
+rec sta=540_550 x=540 y=550 depth=0 file=540_550
+rec sta=540_560 x=540 y=560 depth=0 file=540_560
+rec sta=540_570 x=540 y=570 depth=0 file=540_570
+rec sta=540_580 x=540 y=580 depth=0 file=540_580
+rec sta=540_590 x=540 y=590 depth=0 file=540_590
+rec sta=550_500 x=550 y=500 depth=0 file=550_500
+rec sta=550_510 x=550 y=510 depth=0 file=550_510
+rec sta=550_520 x=550 y=520 depth=0 file=550_520
+rec sta=550_530 x=550 y=530 depth=0 file=550_530
+rec sta=550_540 x=550 y=540 depth=0 file=550_540
+rec sta=550_550 x=550 y=550 depth=0 file=550_550
+rec sta=550_560 x=550 y=560 depth=0 file=550_560
+rec sta=550_570 x=550 y=570 depth=0 file=550_570
+rec sta=550_580 x=550 y=580 depth=0 file=550_580
+rec sta=550_590 x=550 y=590 depth=0 file=550_590
+rec sta=560_500 x=560 y=500 depth=0 file=560_500
+rec sta=560_510 x=560 y=510 depth=0 file=560_510
+rec sta=560_520 x=560 y=520 depth=0 file=560_520
+rec sta=560_530 x=560 y=530 depth=0 file=560_530
+rec sta=560_540 x=560 y=540 depth=0 file=560_540
+rec sta=560_550 x=560 y=550 depth=0 file=560_550
+rec sta=560_560 x=560 y=560 depth=0 file=560_560
+rec sta=560_570 x=560 y=570 depth=0 file=560_570
+rec sta=560_580 x=560 y=580 depth=0 file=560_580
+rec sta=560_590 x=560 y=590 depth=0 file=560_590
+rec sta=570_500 x=570 y=500 depth=0 file=570_500
+rec sta=570_510 x=570 y=510 depth=0 file=570_510
+rec sta=570_520 x=570 y=520 depth=0 file=570_520
+rec sta=570_530 x=570 y=530 depth=0 file=570_530
+rec sta=570_540 x=570 y=540 depth=0 file=570_540
+rec sta=570_550 x=570 y=550 depth=0 file=570_550
+rec sta=570_560 x=570 y=560 depth=0 file=570_560
+rec sta=570_570 x=570 y=570 depth=0 file=570_570
+rec sta=570_580 x=570 y=580 depth=0 file=570_580
+rec sta=570_590 x=570 y=590 depth=0 file=570_590
+rec sta=580_500 x=580 y=500 depth=0 file=580_500
+rec sta=580_510 x=580 y=510 depth=0 file=580_510
+rec sta=580_520 x=580 y=520 depth=0 file=580_520
+rec sta=580_530 x=580 y=530 depth=0 file=580_530
+rec sta=580_540 x=580 y=540 depth=0 file=580_540
+rec sta=580_550 x=580 y=550 depth=0 file=580_550
+rec sta=580_560 x=580 y=560 depth=0 file=580_560
+rec sta=580_570 x=580 y=570 depth=0 file=580_570
+rec sta=580_580 x=580 y=580 depth=0 file=580_580
+rec sta=580_590 x=580 y=590 depth=0 file=580_590
+rec sta=590_500 x=590 y=500 depth=0 file=590_500
+rec sta=590_510 x=590 y=510 depth=0 file=590_510
+rec sta=590_520 x=590 y=520 depth=0 file=590_520
+rec sta=590_530 x=590 y=530 depth=0 file=590_530
+rec sta=590_540 x=590 y=540 depth=0 file=590_540
+rec sta=590_550 x=590 y=550 depth=0 file=590_550
+rec sta=590_560 x=590 y=560 depth=0 file=590_560
+rec sta=590_570 x=590 y=570 depth=0 file=590_570
+rec sta=590_580 x=590 y=580 depth=0 file=590_580
+rec sta=590_590 x=590 y=590 depth=0 file=590_590

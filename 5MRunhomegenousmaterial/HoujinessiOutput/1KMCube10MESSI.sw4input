@@ -16,7 +16,7 @@ grid x=1000 y=1000 z=1000 h=5 lat=37.869803 lon=-122.246296 az=0.0 proj=tmerc da
 
 supergrid gp=30
 
-time t=5.0 utcstart=01/01/2019:00:00:00.0
+time t=1.0 utcstart=01/01/2019:00:00:00.0
 
 globalmaterial vpmin=850 vsmin=425
 
