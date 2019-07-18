@@ -1,0 +1,15 @@
+
+NODES: 40
+PROCPERNODE: 32
+OMP_NUM_THREADS: 2
+TASKS: 1280
+NUMLC: 8
+
+Running on 40 nodes with 1280 MPI ranks and OMP_NUM_THREADS=2
+RUN: 10m1X3X6
+Mon Jul  8 14:17:14 PDT 2019
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 22866211.0 ON nid03725 CANCELLED AT 2019-07-08T15:02:50 ***
+slurmstepd: error: *** JOB 22866211 ON nid03725 CANCELLED AT 2019-07-08T15:02:50 ***
+srun: forcing job termination

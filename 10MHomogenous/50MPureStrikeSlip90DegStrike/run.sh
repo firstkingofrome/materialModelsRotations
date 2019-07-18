@@ -2,7 +2,7 @@
 #SBATCH --account m3354
 #SBATCH -N 40
 #SBATCH -S 4
-#SBATCH -t 480 
+#SBATCH -t 720
 ##SBATCH -p regular 
 #SBATCH -q regular
 #SBATCH -C knl,quad,cache
@@ -11,15 +11,14 @@
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=eeckert@nevada.unr.edu
 ## burst buffer request
-#DW jobdw capacity=10GB access_mode=striped type=scratch 
-#DW stage_out source=$DW_JOB_STRIPED/10m1X3X6 destination=/global/cscratch1/sd/eeckert/10MHomogenousLessPolarized/10m1X3X6 type=directory
-
-#set the output directory
-#MAKE SURE THAT THIS MATCHES THE SOURCE SET IN THE BURST BUFFER CALL!!
-set RUN = 10m1X3X6 
-
+##DW jobdw capacity=10GB access_mode=striped type=scratch 
+##DW stage_out source=$DW_JOB_STRIPED/dirname destination=/data/home/eeckert/git/materialModelsRotations/10MHomogenous/10m1X3X6/10M1x3x6.sw4output type=directory
 # Set total number of nodes request (must match -N above)
-set NODES = 1
+set NODES = 40
+
+#set the output directory and rupture directory (if applicable)
+set RUN = 10m1X3X6 
+#set RUPTURE = m6.0-12.5x8.0.s005.v5.1.srf
 
 # Set number of threads per node
 # Set number of OpenMP threads per node
@@ -56,7 +55,10 @@ echo
 echo "Running on ${NODES} nodes with ${TASKS} MPI ranks and OMP_NUM_THREADS=${OMP_NUM_THREADS}"
 
 
-
+#set RUN = GF_M6.0_1_1D_10
+#set RUPTURE = m6.0-12.5x8.0.s001.v5.1.srf
+#set RUN = GF_M6.5_1_1D_10
+#set RUPTURE = m6.5-26.4x12.0.s001.v5.1.srf
 echo RUN: $RUN
 cp $RUN.sw4input $RUN
 cd $RUN
@@ -67,10 +69,8 @@ cd $RUN
 if ( -d $RUN.sw4output ) then
   /bin/rm -r -f $RUN.sw4output
 endif
-mkdir $DW_JOB_STRIPED.sw4output
-
-#stage in the sw4 input files
-#DW stage_in source= destination=$DW_JOB_STRIPED/filename type=file
+mkdir $RUN.sw4output
+stripe_small $RUN.sw4output
 
 # SBCAST files to assigned nodes
 sbcast -f -F2 -t 300 --compress=lz4 $SW4BIN/$SW4FILE /tmp/$SW4FILE

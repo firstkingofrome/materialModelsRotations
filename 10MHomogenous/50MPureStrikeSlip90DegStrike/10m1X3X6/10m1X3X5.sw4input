@@ -1,46 +1,38 @@
 # SW4 input RUN: 1X3X6SimpleSource
 
 
-fileio path=10m1X3X6.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
+fileio path=10M1x3x5.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
 
 
 developer reporttiming=yes
 #GRID
 grid x=1000 y=3000 z=6000 h=10.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
 supergrid gp=30
-time t=20.0 utcstart=01/01/2019:00:00:00.0
+time t=15.0 utcstart=01/01/2019:00:00:00.0
 
 
 globalmaterial vpmin=850 vsmin=425
 attenuation phasefreq=2.5 nmech=3 maxfreq=5.3125
 block x1=0.0 x2=1000 y1=0.0 y2=3000 z1=0.0 z2=6000 vp=1600.0 vs=425.0 rho=2000.0 qp=42.5 qs=21.2
 #SOURCE:
-#source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e16 strike=45 dip=90 rake=180
-#less polarized
-source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e15 strike=90 dip=85 rake=178
+source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e15 strike=90 dip=90 rake=180
+
 
 #PREFILTER STF
 prefilter fc2=5.3125 type=lowpass passes=2 order=2
 #OUTPUT INSTRUCTIONS--ESSI
 #essioutput file=1X3X6.SS_ESSI_LARGE xmin=0 xmax=1000 ymin=0 ymax=3000 depth=10
 essioutput file=1X3X6.SS_ESSI_SMALL xmin=500 xmax=700 ymin=1500 ymax=1700 depth=200
+essioutput file=1X3X6.SS_ESSI_100M xmin=500 xmax=600 ymin=1500 ymax=1600 depth=100
 #essioutput file=1X3X6.SS_ESSI_SMALL1 xmin=500 xmax=700 ymin=1000 ymax=1200 depth=200
-essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=500 xmax=700 ymin=2000 ymax=2200 depth=200
+#essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=500 xmax=700 ymin=2000 ymax=2200 depth=200
 #essioutput file=1X3X6.SS_ESSI_SMALL3 xmin=500 xmax=700 ymin=2500 ymax=2700 depth=200
-#essioutput file=1X3X6M.SS_ESSI_SMALL4 xmin=200 xmax=500 ymin=1000 ymax=1200 depth=200
+essioutput file=1X3X6M.SS_ESSI_SMALL4 xmin=200 xmax=500 ymin=1000 ymax=1200 depth=200
 #Image ouptuts
 image mode=rho z=0 file=image cycle=0
 image mode=hmax z=0 file=image time=5.0
 image mode=hmax z=0 file=image time=10.0
-image mode=hmax z=0 file=image time=15.0
 image mode=vmax z=0 file=image time=5.0
 image mode=vmax z=0 file=image time=10.0
-image mode=vmax z=0 file=image time=15.0
-
-#images outputs for animation
-#image mode=ux x=600 y=1600 timeInterval=.1 file=3D
-#image mode=uy x=600 y=1600 timeInterval=.1 file=3D
-#image mode=uz x=600 y=1600 timeInterval=.1 file=3D
 #SAC OUPPUT INSTRUCTIONS:
-rec sta=500_1500 x=500 y=1500 depth=0 file=500_500
-
+rec sta=500_500 x=500 y=500 depth=0 file=500_500
