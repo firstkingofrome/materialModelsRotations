@@ -6,28 +6,28 @@ fileio path=10m1X3X6.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
 
 developer reporttiming=yes
 #GRID
-grid x=1000 y=3000 z=6000 h=10.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
+grid x=1500 y=3000 z=6000 h=10.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
 supergrid gp=30
-time t=20.0 utcstart=01/01/2019:00:00:00.0
+time t=30.0 utcstart=01/01/2019:00:00:00.0
 
 
 globalmaterial vpmin=850 vsmin=425
 attenuation phasefreq=2.5 nmech=3 maxfreq=10.0
-block x1=0.0 x2=1000 y1=0.0 y2=3000 z1=0.0 z2=6000 vp=1600.0 vs=425.0 rho=2000.0 qp=42.5 qs=21.2
+block x1=0.0 x2=1500 y1=0.0 y2=3000 z1=0.0 z2=6000 vp=2000.0 vs=800.0 rho=2000.0 qp=42.5 qs=21.2
 #SOURCE:
 #source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e16 strike=45 dip=90 rake=180
 #less polarized
-source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e15 strike=90 dip=85 rake=178
+source x=610 y=610 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e15 strike=90 dip=85 rake=178
 
 #PREFILTER STF
-prefilter fc1=0.2 fc2=5.3125 type=lowpass passes=2 order=2
+prefilter fc2=5.3125 type=lowpass passes=2 order=2
 #OUTPUT INSTRUCTIONS--ESSI
-#essioutput file=1X3X6.SS_ESSI_LARGE xmin=0 xmax=1000 ymin=0 ymax=3000 depth=10
-essioutput file=1X3X6.SS_ESSI_SMALL xmin=600 xmax=800 ymin=1500 ymax=1700 depth=200
-#essioutput file=1X3X6.SS_ESSI_SMALL1 xmin=500 xmax=700 ymin=1000 ymax=1200 depth=200
-#essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=500 xmax=700 ymin=2000 ymax=2200 depth=200
-#essioutput file=1X3X6.SS_ESSI_SMALL3 xmin=500 xmax=700 ymin=2500 ymax=2700 depth=200
-#essioutput file=1X3X6M.SS_ESSI_SMALL4 xmin=200 xmax=500 ymin=1000 ymax=1200 depth=200
+essioutput file=1X3X6.SS_ESSI_LARGE xmin=50 xmax=950 ymin=50 ymax=2950 depth=10
+essioutput file=1X3X6.SS_ESSI_SMALL xmin=650 xmax=850 ymin=1500 ymax=1700 depth=200
+essioutput file=1X3X6.SS_ESSI_SMALL1 xmin=650 xmax=850 ymin=1000 ymax=1200 depth=200
+essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=650 xmax=850 ymin=2000 ymax=2200 depth=200
+essioutput file=1X3X6.SS_ESSI_SMALL3 xmin=650 xmax=850 ymin=2500 ymax=2700 depth=200
+essioutput file=1X3X6M.SS_ESSI_SMALL4 xmin=200 xmax=500 ymin=1000 ymax=1200 depth=200
 #Image ouptuts
 image mode=rho z=0 file=image cycle=0
 image mode=hmax z=0 file=image time=5.0
@@ -41,7 +41,6 @@ image mode=vmax z=0 file=image time=15.0
 #image mode=ux x=600 y=1600 timeInterval=.1 file=3D
 #image mode=uy x=600 y=1600 timeInterval=.1 file=3D
 #image mode=uz x=600 y=1600 timeInterval=.1 file=3D
-#SAC OUPPUT INSTRUCTIONS:
 #SAC OUPPUT INSTRUCTIONS:
 rec sta=500_0 x=500 y=0 depth=0 file=500_0
 rec sta=500_50 x=500 y=50 depth=0 file=500_50
@@ -103,64 +102,5 @@ rec sta=500_2800 x=500 y=2800 depth=0 file=500_2800
 rec sta=500_2850 x=500 y=2850 depth=0 file=500_2850
 rec sta=500_2900 x=500 y=2900 depth=0 file=500_2900
 rec sta=500_2950 x=500 y=2950 depth=0 file=500_2950
-rec sta=500_3000 x=500 y=3000 depth=0 file=500_3000
-rec sta=500_3050 x=500 y=3050 depth=0 file=500_3050
-rec sta=500_3100 x=500 y=3100 depth=0 file=500_3100
-rec sta=500_3150 x=500 y=3150 depth=0 file=500_3150
-rec sta=500_3200 x=500 y=3200 depth=0 file=500_3200
-rec sta=500_3250 x=500 y=3250 depth=0 file=500_3250
-rec sta=500_3300 x=500 y=3300 depth=0 file=500_3300
-rec sta=500_3350 x=500 y=3350 depth=0 file=500_3350
-rec sta=500_3400 x=500 y=3400 depth=0 file=500_3400
-rec sta=500_3450 x=500 y=3450 depth=0 file=500_3450
-rec sta=500_3500 x=500 y=3500 depth=0 file=500_3500
-rec sta=500_3550 x=500 y=3550 depth=0 file=500_3550
-rec sta=500_3600 x=500 y=3600 depth=0 file=500_3600
-rec sta=500_3650 x=500 y=3650 depth=0 file=500_3650
-rec sta=500_3700 x=500 y=3700 depth=0 file=500_3700
-rec sta=500_3750 x=500 y=3750 depth=0 file=500_3750
-rec sta=500_3800 x=500 y=3800 depth=0 file=500_3800
-rec sta=500_3850 x=500 y=3850 depth=0 file=500_3850
-rec sta=500_3900 x=500 y=3900 depth=0 file=500_3900
-rec sta=500_3950 x=500 y=3950 depth=0 file=500_3950
-rec sta=500_4000 x=500 y=4000 depth=0 file=500_4000
-rec sta=500_4050 x=500 y=4050 depth=0 file=500_4050
-rec sta=500_4100 x=500 y=4100 depth=0 file=500_4100
-rec sta=500_4150 x=500 y=4150 depth=0 file=500_4150
-rec sta=500_4200 x=500 y=4200 depth=0 file=500_4200
-rec sta=500_4250 x=500 y=4250 depth=0 file=500_4250
-rec sta=500_4300 x=500 y=4300 depth=0 file=500_4300
-rec sta=500_4350 x=500 y=4350 depth=0 file=500_4350
-rec sta=500_4400 x=500 y=4400 depth=0 file=500_4400
-rec sta=500_4450 x=500 y=4450 depth=0 file=500_4450
-rec sta=500_4500 x=500 y=4500 depth=0 file=500_4500
-rec sta=500_4550 x=500 y=4550 depth=0 file=500_4550
-rec sta=500_4600 x=500 y=4600 depth=0 file=500_4600
-rec sta=500_4650 x=500 y=4650 depth=0 file=500_4650
-rec sta=500_4700 x=500 y=4700 depth=0 file=500_4700
-rec sta=500_4750 x=500 y=4750 depth=0 file=500_4750
-rec sta=500_4800 x=500 y=4800 depth=0 file=500_4800
-rec sta=500_4850 x=500 y=4850 depth=0 file=500_4850
-rec sta=500_4900 x=500 y=4900 depth=0 file=500_4900
-rec sta=500_4950 x=500 y=4950 depth=0 file=500_4950
-rec sta=500_5000 x=500 y=5000 depth=0 file=500_5000
-rec sta=500_5050 x=500 y=5050 depth=0 file=500_5050
-rec sta=500_5100 x=500 y=5100 depth=0 file=500_5100
-rec sta=500_5150 x=500 y=5150 depth=0 file=500_5150
-rec sta=500_5200 x=500 y=5200 depth=0 file=500_5200
-rec sta=500_5250 x=500 y=5250 depth=0 file=500_5250
-rec sta=500_5300 x=500 y=5300 depth=0 file=500_5300
-rec sta=500_5350 x=500 y=5350 depth=0 file=500_5350
-rec sta=500_5400 x=500 y=5400 depth=0 file=500_5400
-rec sta=500_5450 x=500 y=5450 depth=0 file=500_5450
-rec sta=500_5500 x=500 y=5500 depth=0 file=500_5500
-rec sta=500_5550 x=500 y=5550 depth=0 file=500_5550
-rec sta=500_5600 x=500 y=5600 depth=0 file=500_5600
-rec sta=500_5650 x=500 y=5650 depth=0 file=500_5650
-rec sta=500_5700 x=500 y=5700 depth=0 file=500_5700
-rec sta=500_5750 x=500 y=5750 depth=0 file=500_5750
-rec sta=500_5800 x=500 y=5800 depth=0 file=500_5800
-rec sta=500_5850 x=500 y=5850 depth=0 file=500_5850
-rec sta=500_5900 x=500 y=5900 depth=0 file=500_5900
-rec sta=500_5950 x=500 y=5950 depth=0 file=500_5950
+
 

@@ -1,8 +1,8 @@
 #!/bin/csh
 #SBATCH --account m3354
-#SBATCH -N 40
+#SBATCH -N 90
 #SBATCH -S 4
-#SBATCH -t 820
+#SBATCH -t 125
 ##SBATCH -p regular 
 #SBATCH -q regular
 #SBATCH -C knl,quad,cache
@@ -14,7 +14,7 @@
 ##DW jobdw capacity=10GB access_mode=striped type=scratch 
 ##DW stage_out source=$DW_JOB_STRIPED/dirname destination=/data/home/eeckert/git/materialModelsRotations/10MHomogenous/10m1X3X6/10M1x3x6.sw4output type=directory
 # Set total number of nodes request (must match -N above)
-set NODES = 40
+set NODES = 90
 
 #set the output directory and rupture directory (if applicable)
 set RUN = 10m1X3X6 
@@ -41,7 +41,7 @@ echo OMP_NUM_THREADS: $OMP_NUM_THREADS
 
 #set SW4BIN = /global/project/projectdirs/m2545/sw4/cori-knl/optimize
 #set SW4FILE = sw4-nov-6-2018
-set SW4BIN =  /global/project/projectdirs/m3354/tang/sw4/optimize_mp_h5patch/
+set SW4BIN =  /global/project/projectdirs/m3354/tang/sw4/optimize_mp/
 set SW4FILE = sw4
 
 # Note that $OMP_NUM_THREADS * $PROCPERNODE must equal 64
