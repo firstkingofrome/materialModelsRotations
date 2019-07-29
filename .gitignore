@@ -5,6 +5,8 @@
 **/abottLouie
 #large sw4 outputs
 *.sw4out 
+*.essiHDF5
+*.mp4
 *.essi
 *.png
 *.essi
