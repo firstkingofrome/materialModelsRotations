@@ -1,25 +1,26 @@
 # SW4 input RUN: 1X3X6SimpleSource
-
+# same as the other one except larger domain, bumped up the source by 1/2 an order of magnitude
 fileio path=10m1X3X6.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
 
 developer reporttiming=yes
 #GRID
-grid x=4000 y=10000 z=5000 h=10.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
-supergrid gp=30
+grid x=4000 y=10000 z=6000 h=20.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
+refinement zmax=2000
 time t=45.0 utcstart=01/01/2019:00:00:00.0
+supergrid gp=30
 
-globalmaterial vpmin=2000.0 vsmin=800.0
-attenuation phasefreq=2.5 nmech=3 maxfreq=10.0
-block x1=0.0 x2=4000 y1=0.0 y2=10000 z1=0.0 z2=5000 vp=2000.0 vs=800.0 rho=2000.0 qp=42.5 qs=21.2
+globalmaterial vpmin=850 vsmin=425
+attenuation phasefreq=2.5 nmech=3 maxfreq=5.3125
+block x1=0.0 x2=4000 y1=0.0 y2=10000 z1=0.0 z2=2000 vp=2000.0 vs=800.0 rho=2000.0 qp=42.5 qs=21.2
+block x1=0.0 x2=4000 y1=0.0 y2=10000 z1=2000 z2=6000 vp=4000.0 vs=1600.0 rho=2500.0 qp=2000.0 qs=2000.0
+
 #SOURCE:
-#source x=500 y=500 z=5000 t0=1.0 type=Gaussian freq=13.351768777756622 m0=5.0e16 strike=45 dip=90 rake=180
 #less polarized
 source x=1000 y=1000 z=5000 t0=0.5 type=Gaussian freq=25.132741228718345 m0=5.5e15 strike=90 dip=80 rake=165
-
 #PREFILTER STF
 prefilter fc2=10.0 type=lowpass passes=2 order=2
 #OUTPUT INSTRUCTIONS--ESSI
-essioutput file=1X3X6.SS_ESSI_LARGE xmin=50 xmax=3950 ymin=50 ymax=6950 depth=10
+essioutput file=1X3X6.SS_ESSI_LARGE xmin=50 xmax=950 ymin=50 ymax=2950 depth=10
 essioutput file=1X3X6.SS_ESSI_SMALL xmin=2000 xmax=2200 ymin= ymax=1700 depth=200
 essioutput file=1X3X6.SS_ESSI_SMALL1 xmin=2000 xmax=2200 ymin=1000 ymax=1200 depth=200
 essioutput file=1X3X6M.SS_ESSI_SMALL2 xmin=2000 xmax=2200 ymin=2000 ymax=2200 depth=200
@@ -522,3 +523,4 @@ rec sta=1800_5850 x=1800 y=5850 depth=0 file=1800_5850
 rec sta=1800_5900 x=1800 y=5900 depth=0 file=1800_5900
 rec sta=1800_5950 x=1800 y=5950 depth=0 file=1800_5950
 rec sta=1800_5950 x=2000 y=6500 depth=0 file=1800_5950
+

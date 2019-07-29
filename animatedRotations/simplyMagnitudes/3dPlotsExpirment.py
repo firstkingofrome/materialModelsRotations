@@ -7,15 +7,26 @@ import multiprocessing
 import numpy as np
 import scipy
 import scipy.integrate
+from mayavi.mlab import * ### figure out what this is doing
 from mayavi import mlab
 mlab.options.offscreen = True #dont display anything
 gridSpacing = 10
+NCPUS = 16
+normalize=True
 #load up youre hdf5 container and get the velocity data set, try plotting that!
 #load up the relevent container
-path = "./processed/frames/1X3X6.SS_ESSI_SMALL.cycle=0000.essi/"
+path = "./processed/frames/1X3X6.SS_ESSI_LARGE.cycle=0000.essi/"
+#currentContainer = './sw4output/1X3X6.SS_ESSI_LARGE.cycle=0000.essi'
 currentContainer = './sw4output/1X3X6.SS_ESSI_SMALL.cycle=0000.essi'
+FPS=10
+rootDir = os.getcwd()
 hdf5File = h5py.File(currentContainer,'r')
-surface = hdf5File['vel_0 ijk layout'][:,:,:,0]
+#get the sw4 x surface
+surface = hdf5File['vel_2 ijk layout'][:,:,:,0]
+#get the sw4 y surface
+
+#get the sw4 z surface
+
 """
 generate a meshgrid so that this is correctly spaced
 """
@@ -27,10 +38,31 @@ x,y = x.T,y.T
 ### interesting stuff happens at t=900 seconds
 vmin,vmax = np.min(surface[:]),np.max(surface[:])   
 for t in range(surface.shape[0]):
+    
+    ### expirment by computing a single vector field
+    mlab.imshow(surface[t],vmin=vmin,vmax=vmax)
 
-    mlab.surf(surface[t],warp_scale='auto',vmin=vmin,vmax=vmax)
-    #mlab.surf(x,y,surface[t],warp_scale='auto')
+    #mlab.surf(surface[t],warp_scale='auto',vmin=vmin,vmax=vmax)
+    #mlab.surf(x,y,surface[t])
     mlab.savefig(filename=path+'{0:04d}'.format(t)+".png")
+    #clear it
+    mlab.clf()
+    
+
+### assemble all of these frames with ffmpeg
+#call ffmpeg
+os.chdir(path)
+videoName = "X-plane"+".mp4"
+#try and remove the file (incase one already exists)
+if(os.path.isfile(videoName)):os.remove(videoName)
+print("/data/software/sl-7.x86_64/module/tools/ffmpeg/bin/ffmpeg -framerate "+str(FPS)+" -pattern_type glob -i '*.png' -c:v libx264 -pix_fmt yuv420p "+videoName)
+#subprocess.call(("/data/software/sl-7.x86_64/modules/tools/ffmpeg/bin/ffmpeg -framerate "+str(parameters["FPS"])+" -pattern_type glob -i '*.png' -c:v h264 -pix_fmt yuv420p "+videoName), shell=True)
+subprocess.call(("/data/home/eeckert/ffmpeg-4.1.4-amd64-static/ffmpeg -framerate "+str(FPS)+" -pattern_type glob -i '*.png' -c:v libx264 -pix_fmt yuv420p "+videoName), shell=True)
+#go back to the normal working directory
+subprocess.call(("cp "+videoName + " " +rootDir), shell=True)
+
+#copy it to the root directory
+os.chdir(rootDir)
     
 
 

@@ -1,24 +1,25 @@
 #!/bin/csh
 #SBATCH --account m3354
-#SBATCH -N 90
+#SBATCH -N 5
 #SBATCH -S 4
-#SBATCH -t 500
+#SBATCH -t 5 
 ##SBATCH -p regular 
-#SBATCH -q regular
+#SBATCH -q debug 
 #SBATCH -C knl,quad,cache
 #SBATCH -L SCRATCH 
-#SBATCH -J 10MdomainforESSI
+#SBATCH -J burstBufferTest
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=eeckert@nevada.unr.edu
 ## burst buffer request
-##DW jobdw capacity=10GB access_mode=striped type=scratch 
-##DW stage_out source=$DW_JOB_STRIPED/dirname destination=/data/home/eeckert/git/materialModelsRotations/10MHomogenous/10m1X3X6/10M1x3x6.sw4output type=directory
+#DW jobdw capacity=40GB access_mode=striped type=scratch 
+#DW stage_out source=$DW_JOB_STRIPED destination= type=directory
 # Set total number of nodes request (must match -N above)
-set NODES = 90
-
+#change sw4 output to burst buffer location:sed 's/path=testBurstBuffer.sw4output/path=$DW_JOB_STRIPED'
+set NODES = 5
 #set the output directory and rupture directory (if applicable)
-set RUN = 10m1X3X6 
-#set RUPTURE = m6.0-12.5x8.0.s005.v5.1.srf
+set RUN = burstBufferTest 
+
+
 
 # Set number of threads per node
 # Set number of OpenMP threads per node
@@ -41,7 +42,7 @@ echo OMP_NUM_THREADS: $OMP_NUM_THREADS
 
 #set SW4BIN = /global/project/projectdirs/m2545/sw4/cori-knl/optimize
 #set SW4FILE = sw4-nov-6-2018
-set SW4BIN =  /global/project/projectdirs/m3354/tang/sw4/optimize_mp/
+set SW4BIN =  /global/project/projectdirs/m3354/tang/sw4/optimize_mp_h5patch/
 set SW4FILE = sw4
 
 # Note that $OMP_NUM_THREADS * $PROCPERNODE must equal 64
@@ -54,13 +55,12 @@ echo NUMLC: $NUMLC
 echo
 echo "Running on ${NODES} nodes with ${TASKS} MPI ranks and OMP_NUM_THREADS=${OMP_NUM_THREADS}"
 
-
-#set RUN = GF_M6.0_1_1D_10
-#set RUPTURE = m6.0-12.5x8.0.s001.v5.1.srf
-#set RUN = GF_M6.5_1_1D_10
-#set RUPTURE = m6.5-26.4x12.0.s001.v5.1.srf
 echo RUN: $RUN
+#correct input file to give the right output
+echo "fixing output directory call in the script"
+sed -e 's/path=testBurstBuffer.sw4output/path=$DW_JOB_STRIPED/burstBufferTest/' $RUN.sw4input > $RUN/$RUN.sw4input
 cp $RUN.sw4input $RUN
+
 cd $RUN
 
 # Remove any old output file
@@ -76,6 +76,9 @@ stripe_small $RUN.sw4output
 sbcast -f -F2 -t 300 --compress=lz4 $SW4BIN/$SW4FILE /tmp/$SW4FILE
 sbcast -f -F2 -t 300 --compress=lz4 ./$RUN.sw4input /tmp/$RUN.sw4input
 #sbcast -f -F2 -t 300 --compress=lz4 ./$RUPTURE /tmp/$RUPTURE not using a rupture file right now
+
+#modify the sw4 input file to output to the burst buffer
+
 
 date
 srun -N $NODES -n $TASKS -c $NUMLC --cpu_bind=cores $SW4BIN/$SW4FILE $RUN.sw4input >! $RUN.output

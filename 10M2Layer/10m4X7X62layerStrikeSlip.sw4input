@@ -1,0 +1,57 @@
+# SW4 input RUN: 1X3X6SimpleSource
+#normal faulting, designed so that most of the domain is on the hanging wall (since arties says this presents greater hazards)
+# same as the other one except larger domain, bumped up the source by 1/2 an order of magnitude and there is now two layers
+fileio path=10m4X7X6Normal.sw4output verbose=1 printcycle=100 pfs=1 nwriters=32
+
+developer reporttiming=yes
+#GRID
+grid x=4000 y=7000 z=6000 h=20.0 lat=37.869803 lon=-122.246296 proj=tmerc datum=NAD83 lon_p=-123.0 lat_p=35.0 scale=0.9996
+refinement zmax=2000
+time t=45.0 utcstart=01/01/2019:00:00:00.0
+supergrid gp=30 
+
+globalmaterial vpmin=2000 vsmin=800
+attenuation phasefreq=2.5 nmech=3 maxfreq=5.3125
+block x1=0.0 x2=4000 y1=0.0 y2=7000 z1=0.0 z2=2000 vp=2000.0 vs=800.0 rho=2000.0 qp=42.5 qs=21.2
+block x1=0.0 x2=4000 y1=0.0 y2=7000 z1=2000 z2=6000 vp=4000.0 vs=1600.0 rho=2500.0 qp=2000.0 qs=2000.0
+
+#SOURCE:
+#less polarized
+source x=1900 y=1500 z=4000 t0=1.0 type=Gaussian freq=25.132741228718345 m0=5.5e15 strike=180 dip=90 rake=180
+#PREFILTER STF
+prefilter fc2=10.0 type=lowpass passes=2 order=2
+#OUTPUT INSTRUCTIONS--ESSI
+essioutput file=1X3X6.SS_ESSI_LARGE xmin=50 xmax=3950 ymin=50 ymax=6950 depth=10
+essioutput file=1X3X6M.SS_800_1000 xmin=2000 xmax=2200 ymin=800 ymax=1000 depth=200
+essioutput file=1X3X6.SS_1500_1700 xmin=2000 xmax=2200 ymin=1500 ymax=1700 depth=200
+essioutput file=1X3X6.SS_2000_2200 xmin=2000 xmax=2200 ymin=2000 ymax=2200 depth=200
+essioutput file=1X3X6M.SS_3000_3200 xmin=2000 xmax=2200 ymin=3000 ymax=3200 depth=200
+essioutput file=1X3X6.SS_4000_4200 xmin=2000 xmax=2200 ymin=4000 ymax=4200 depth=200
+essioutput file=1X3X6M.SS_5000_5200 xmin=2000 xmax=2200 ymin=5000 ymax=5200 depth=200
+essioutput file=1X3X6M.SS_5000_5200 xmin=2000 xmax=2200 ymin=5000 ymax=5200 depth=200
+essioutput file=1X3X6M.SS_6000_6200 xmin=2000 xmax=2200 ymin=6000 ymax=6200 depth=200
+
+#Image ouptuts
+image mode=rho z=0 file=image cycle=0
+image mode=hmax z=0 file=image time=5.0
+image mode=hmax z=0 file=image time=10.0
+image mode=hmax z=0 file=image time=15.0
+image mode=vmax z=0 file=image time=5.0
+image mode=vmax z=0 file=image time=10.0
+image mode=vmax z=0 file=image time=15.0
+
+#images outputs for animation
+image mode=ux z=0 timeInterval=.1 file=3D
+image mode=uy z=0 timeInterval=.1 file=3D
+image mode=uz z=0 timeInterval=.1 file=3D
+
+#SAC OUPPUT INSTRUCTIONS:
+
+rec sta=1650_400 x=1650 y=400 depth=0 file=1650_400
+rec sta=1650_450 x=1650 y=450 depth=0 file=1650_450
+rec sta=1650_500 x=1650 y=500 depth=0 file=1650_500
+rec sta=1650_550 x=1650 y=550 depth=0 file=1650_550
+rec sta=1800_5900 x=1800 y=5900 depth=0 file=1800_5900
+rec sta=1800_5950 x=1800 y=5950 depth=0 file=1800_5950
+rec sta=1800_5950 x=2000 y=6500 depth=0 file=1800_5950
+

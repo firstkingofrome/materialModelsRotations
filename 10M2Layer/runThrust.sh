@@ -1,24 +1,23 @@
 #!/bin/csh
 #SBATCH --account m3354
-#SBATCH -N 90
+#SBATCH -N 100
 #SBATCH -S 4
-#SBATCH -t 500
+#SBATCH -t 950
 ##SBATCH -p regular 
 #SBATCH -q regular
 #SBATCH -C knl,quad,cache
 #SBATCH -L SCRATCH 
-#SBATCH -J 10MdomainforESSI
+#SBATCH -J thrustFault
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=eeckert@nevada.unr.edu
 ## burst buffer request
 ##DW jobdw capacity=10GB access_mode=striped type=scratch 
 ##DW stage_out source=$DW_JOB_STRIPED/dirname destination=/data/home/eeckert/git/materialModelsRotations/10MHomogenous/10m1X3X6/10M1x3x6.sw4output type=directory
 # Set total number of nodes request (must match -N above)
-set NODES = 90
+set NODES = 100
 
 #set the output directory and rupture directory (if applicable)
-set RUN = 10m1X3X6 
-#set RUPTURE = m6.0-12.5x8.0.s005.v5.1.srf
+set RUN = 10m4X7X62layerThrust
 
 # Set number of threads per node
 # Set number of OpenMP threads per node

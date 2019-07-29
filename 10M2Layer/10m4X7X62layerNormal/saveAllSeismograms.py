@@ -61,7 +61,7 @@ def plotLine(plotArgs):
     time = np.linspace(0, st[0].stats.npts*st[0].stats.delta, st[0].stats.npts)
     print('Lengths: ', len(st_acc[0].data), len(st_vel[0].data), len(st_dis[0].data), len(time))
     gm_list = ['Acceleration (g)', 'Velocity (m/s)', 'Displacement (m)']
-    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(25,8), dpi=200)
+    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(25,8), dpi=DPI)
     for i, ax in enumerate(axes):
         ax.set_xlim(t1, t2)
         ax.set_xlabel('Time (sec)')
@@ -75,13 +75,13 @@ def plotLine(plotArgs):
             z = z1 + lineSpacing
             scale = plotArgs["scale"]
             for tr in st_acc[1:]:
-                ax.plot(time, z + scale*tr.data/g, lw=1)
+                ax.plot(time, z + scale*tr.data/g, lw=0.25)
                 ax.text(t2-5, z, str(round((np.abs(tr.data/g)).max(),2)), fontsize=6)
                 z += lineSpacing
                 if z > z2:
                     break
-            ax.vlines(2,z1+1, z1+1.5, colors='k', lw=3)
-            ax.vlines(4, z1+1, z1+2, colors='k', lw=3)
+            ax.vlines(2,z1+1, z1+1.5, colors='k', lw=2)
+            ax.vlines(4, z1+1, z1+2, colors='k', lw=2)
             #ax.text(1, z1+0.8, '1 2 g', fontsize=8, horizontalalignment='left', verticalalignment='top')
         
         # Velocity
@@ -89,20 +89,20 @@ def plotLine(plotArgs):
             z = z1 + lineSpacing
             scale = plotArgs["scale"]
             for tr in st_vel[1:]:
-                ax.plot(time, z + scale*tr.data, lw=1)
+                ax.plot(time, z + scale*tr.data, lw=0.25)
                 ax.text(t2-5, z, str(round((np.abs(tr.data)).max(),2)), fontsize=6)
                 z += lineSpacing
                 if z > z2:
                     break
-            ax.vlines(2, z1+1, z1+1.5, colors='k', lw=3)
-            ax.vlines(4, z1+1, z1+2, colors='k', lw=3)
+            ax.vlines(2, z1+1, z1+1.5, colors='k', lw=2)
+            ax.vlines(4, z1+1, z1+2, colors='k', lw=2)
             #ax.text(1, z1+0.8, '1 2 m/s', fontsize=8, horizontalalignment='left', verticalalignment='top')
         # Displacement
         if i==2:
             z = z1 + lineSpacing
-            scale = plotArgs["scale"]
+            scale = plotArgs["dispScale"]
             for tr in st_dis[1:]:
-                ax.plot(time, z + scale*tr.data, lw=1)
+                ax.plot(time, z + scale*tr.data, lw=0.25)
                 ax.text(t2-5, z, str(round((np.abs(tr.data)).max(),2)), fontsize=6)
                 z += lineSpacing
                 if z > z2:
@@ -150,7 +150,7 @@ def parallelPlotWrapper(args):
 ### default plot and sac arguments 
 trace_header = {
     "starttime":0,
-    "endtime":15,
+    "endtime":45,
     "sampling_rate":-1,
     "delta":-1, 
     "npts":-1,
@@ -168,7 +168,8 @@ plotArgs = {
     "g":9.8,
     "path":"./",
     "DPI":400,
-    "scale":4.0
+    "scale":10.0,
+    "dispScale":100.0
 }
 
 ### Main parameters (aka model specific parameters)
@@ -176,7 +177,7 @@ parameters = {
         "DATA_TYPE":"VEL",
         "MAX_CPU":35,
         "PLOT_DPI":400,
-        "MODEL_DIR":"10m1X10X62layerOblique/sw4output",
+        "MODEL_DIR":"10m4X7X6Normal/sw4output",
         "OUTPUTS_FROM_SCRIPT":"processed",
         "LOCATION_INFORMATION":{"1X3X6M.SS_800_1000":{'x':(2000,2200),'y':(800,1000),"depth":200},
         "1X3X6.SS_1500_1700":{'x':(2000,2200),'y':(1500,1700),"depth":200},
@@ -228,7 +229,7 @@ for location in parameters["LOCATION_INFORMATION"]:
         plotArgs["lineStart"],plotArgs["lineStop"] = parameters["LOCATION_INFORMATION"][location]['y'][0],parameters["LOCATION_INFORMATION"][location]['y'][1]
         plotArgs["path"] =  "./"+parameters["OUTPUTS_FROM_SCRIPT"]+"/seismograms/"+location+"/x/"  
         plotArgs["lineSpacing"]=np.int32(gridSpacing)
-    
+        plotArgs["PLOT_DPI"] = parameters["PLOT_DPI"]
         st = createStream(hdf5File['vel_0 ijk layout'],trace_header,zcoord=depth)
         plotArgs["sac"] = st
         plotArgs["name"] = "Lines Along X at " + str(depth*gridSpacing) + " Meters depth"
@@ -250,6 +251,6 @@ for location in parameters["LOCATION_INFORMATION"]:
         #only run one line
         break
         
-    break
+    
     #done
        

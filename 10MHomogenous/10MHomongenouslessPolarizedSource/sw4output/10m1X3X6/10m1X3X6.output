@@ -1,0 +1,190 @@
+----------------------------------------------------------------
+            sw4 version 2.2-alpha
+
+ This program comes with ABSOLUTELY NO WARRANTY; released under GPL.
+ This is free software, and you are welcome to redistribute     
+ it under certain conditions, see LICENSE.txt for more details  
+----------------------------------------------------------------
+  Compiled on: Mon Jul 22 11:15:15 PDT 2019
+  By user:     houhun
+  Machine:     cori04
+  Compiler:    /opt/cray/pe/craype/2.5.15/bin/CC
+  3rd party include dir: /global/project/projectdirs/m3354/sw4/cori-knl/include, and library dir: /global/project/projectdirs/m3354/sw4/cori-knl/lib
+----------------------------------------------------------------
+
+Input file: 10m1X3X6.sw4input
+Default Supergrid thickness has been tuned; # grid points = 30 grid sizes
+Default Supergrid damping coefficient has been tuned; damping coefficient = 2.00000000e-02
+
+* Processing the grid command...
+* Setting nx to 151 to be consistent with h=1.00000000e+01
+* Setting ny to 301 to be consistent with h=1.00000000e+01
+* Setting nz to 601 to be consistent with h=1.00000000e+01
+Extent of the computational domain xmax=1.50000000e+03 ymax=3.00000000e+03 zmax=6.00000000e+03
+
+*** No topography command found in input file. Using z=0 as free surface boundary ***
+
+
+Global grid sizes (without ghost points)
+Grid         h        Nx        Ny        Nz       Points
+   0        10       151       301       601     27316051
+Total number of grid points (without ghost points): 2.73161e+07
+
+
+
+   Execution time, reading input file 8.42709541e-02 seconds 
+  Using Bjorn's fast (parallel) IO library
+Assuming a PARALLEL file system
+Writing images from (up to) 32 procs
+Detected at least one boundary with supergrid conditions
+----------------------------------------------------
+ Making Directory: 10m1X3X6.sw4output/
+		
+... Done!
+----------------------------------------------------
+Geographic and Cartesian coordinates of the corners of the computational grid:
+0: Lon= -1.222463e+02, Lat=3.786980e+01, x=-1.396984e-09, y=2.255547e-09
+1: Lon= -1.222462e+02, Lat=3.788332e+01, x=1.500000e+03, y=2.037268e-09
+2: Lon= -1.222121e+02, Lat=3.788309e+01, x=1.500000e+03, y=3.000000e+03
+3: Lon= -1.222122e+02, Lat=3.786958e+01, x=-1.455192e-09, y=3.000000e+03
+
+Considering all material blocks
+block command: outside = 181804, material = 27316051
+
+       ----------- Material properties ranges ---------------
+       2.00000000e+03 kg/m^3 <=  Density <= 2.00000000e+03 kg/m^3
+       1.60000000e+03 m/s    <=  Vp      <= 1.60000000e+03 m/s
+       4.25000000e+02 m/s    <=  Vs      <= 4.25000000e+02 m/s
+       3.76470588e+00        <=  Vp/Vs   <= 3.76470588e+00
+       3.61250000e+08 Pa     <=  mu      <= 3.61250000e+08 Pa
+       4.39750000e+09 Pa     <=  lambda  <= 4.39750000e+09 Pa
+       Using attenuation 
+       2.12000000e+01        <=  Qs      <= 2.12000000e+01  
+       4.25000000e+01        <=  Qp      <= 4.25000000e+01  
+       ------------------------------------------------------
+
+***** PPW = minVs/h/maxFrequency ********
+g=0, h=1.000000e+01, minVs/h=42.5 (Cartesian)
+
+
+*** Attenuation parameters calculated for 3 mechanisms,
+      max freq=1.000000e+01 [Hz], min_freq=1.000000e-01 [Hz], velo_freq=2.500000e+00 [Hz]
+
+omega[0]=6.283185e-01 omega[1]=6.283185e+00 omega[2]=6.283185e+01 
+omc[0]=6.283185e-01 omc[1]=1.986918e+00 omc[2]=6.283185e+00 omc[3]=1.986918e+01 omc[4]=6.283185e+01 
+
+  Assigned material properties
+*** computing the time step ***
+TIME accuracy order=4 CFL=1.30000000e+00 prel. time step=7.01499581e-03
+*** Initialized Images
+ Min source z-level: 5.000000e+03, max source z-level: 5.000000e+03
+Filter precursor = 5.060893e-01
+
+   Execution time, start up phase 1.92273593e+00 seconds 
+
+----------------------------------------
+          Setup time summary (average)
+SBP+SG      BndryWind  InitPath  SetElastic  EvalResol  ViscoElastic  CheckPnt     DT     Image     SrcPrep
+5.437e-05  3.339e-04  8.312e-04  7.724e-02  1.232e-03  1.312e+00  1.832e-05  1.399e-01  3.863e-01  4.635e-03  
+Running sw4 on 1280 processors, using 2 threads/processor...
+Writing output to directory: 10m1X3X6.sw4output/
+Lowpass filtering all source time functions to corner frequency fc2=5.312500e+00
+
+***  Starting solve ***
+============================================================
+ Running program on 1280 MPI tasks using the following data: 
+
+ Start Time = 0 Goal Time = 30
+ Number of time steps = 4277 dt: 0.00701426
+
+============================================================
+ Global boundary conditions 
+      x=0    supergrid
+      x=xMax supergrid
+      y=0    supergrid
+      y=yMax supergrid
+      z=topo free surface
+      z=zMax supergrid
+
+
+-----------------------------------------------------------------------
+  Total seismic moment (M0): 5e+15 Nm 
+  Moment magnitude     (Mw): 4.39931
+  Number of moment sources 1
+-----------------------------------------------------------------------
+  Initial data has been assigned
+writing image plane on file 10m1X3X6.sw4output/image.cycle=0000.z=0.rho.sw4img
+
+Reporting SW4 internal flags and settings:
+m_testing=no, twilight=no, point_source=no, moment_test=no, energy_test=no, lamb_test=no, rayleigh_test=no
+m_use_supergrid=yes
+End report of internal flags and settings
+
+
+   Execution time, initial data phase 22 minutes 5.478e+01 seconds 
+
+  Begin time stepping...
+writing image plane on file 10m1X3X6.sw4output/image.cycle=0713.z=0.hmax.sw4img
+writing image plane on file 10m1X3X6.sw4output/image.cycle=0713.z=0.vmax.sw4img
+writing image plane on file 10m1X3X6.sw4output/image.cycle=1426.z=0.hmax.sw4img
+writing image plane on file 10m1X3X6.sw4output/image.cycle=1426.z=0.vmax.sw4img
+writing image plane on file 10m1X3X6.sw4output/image.cycle=2138.z=0.hmax.sw4img
+writing image plane on file 10m1X3X6.sw4output/image.cycle=2138.z=0.vmax.sw4img
+Time step       1  t =   7.0142623e-03
+Time step     101  t =   7.0844050e-01
+Time step     201  t =   1.4098667e+00
+Time step     301  t =   2.1112930e+00
+Time step     401  t =   2.8127192e+00
+Time step     501  t =   3.5141454e+00
+Time step     601  t =   4.2155717e+00
+Time step     701  t =   4.9169979e+00
+Time step     801  t =   5.6184241e+00
+Time step     901  t =   6.3198504e+00
+Time step    1001  t =   7.0212766e+00
+Time step    1101  t =   7.7227028e+00
+Time step    1201  t =   8.4241291e+00
+Time step    1301  t =   9.1255553e+00
+Time step    1401  t =   9.8269815e+00
+Time step    1501  t =   1.0528408e+01
+Time step    1601  t =   1.1229834e+01
+Time step    1701  t =   1.1931260e+01
+Time step    1801  t =   1.2632686e+01
+Time step    1901  t =   1.3334113e+01
+Time step    2001  t =   1.4035539e+01
+Time step    2101  t =   1.4736965e+01
+Time step    2201  t =   1.5438391e+01
+Time step    2301  t =   1.6139818e+01
+Time step    2401  t =   1.6841244e+01
+Time step    2501  t =   1.7542670e+01
+Time step    2601  t =   1.8244096e+01
+Time step    2701  t =   1.8945523e+01
+Time step    2801  t =   1.9646949e+01
+Time step    2901  t =   2.0348375e+01
+Time step    3001  t =   2.1049801e+01
+Time step    3101  t =   2.1751227e+01
+Time step    3201  t =   2.2452654e+01
+Time step    3301  t =   2.3154080e+01
+Time step    3401  t =   2.3855506e+01
+Time step    3501  t =   2.4556932e+01
+Time step    3601  t =   2.5258359e+01
+Time step    3701  t =   2.5959785e+01
+Time step    3801  t =   2.6661211e+01
+Time step    3901  t =   2.7362637e+01
+Time step    4001  t =   2.8064064e+01
+Time step    4101  t =   2.8765490e+01
+Time step    4201  t =   2.9466916e+01
+Time step    4277  t =   3.0000000e+01
+  Time stepping finished...
+    ==> Max wallclock time to open/write ESSI hdf5 output is 1.591e+04 seconds 
+
+   Execution time, time stepping phase 4 hours 15 minutes 3.507e+01 seconds 
+
+----------------------------------------
+          Execution time summary (average)
+Total      Div-stress Forcing    BC         SG         Comm.      MR       Img+T-Series Updates    ESSI
+1.533e+04  5.668e+01  1.059e+00  1.208e+00  6.760e+00  1.266e+04  2.975e-02  1.921e+01  2.199e+01  2.564e+03  
+----------------------------------------
+
+============================================================
+ program sw4 finished! 
+============================================================
