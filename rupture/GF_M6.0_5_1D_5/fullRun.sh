@@ -11,8 +11,9 @@
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=eeckert@nevada.unr.edu
 ## burst buffer request
-#DW jobdw capacity=18000GB access_mode=striped type=scratch 
-#DW stage_out source=$DW_JOB_STRIPED destination=/global/cscratch1/sd/eeckert/largeRuns/GF_M6.0_5_1D_5 type=directory 
+#BB create_persistent name=sw4output capacity=18000GB access_mode=striped type=scratch 
+#DW persistentdw name=sw4output
+#DW stage_out source=$DW_PERSISTENT_STRIPED_sw4output destination=/global/cscratch1/sd/eeckert/largeRuns/GF_M6.0_5_1D_5 type=directory 
 ## stage in the sw4 input files etc.
 # Set total number of nodes request (must match -N above)
 set NODES = 1024
@@ -53,7 +54,7 @@ echo NUMLC: $NUMLC
 echo "Running on ${NODES} nodes with ${TASKS} MPI ranks and OMP_NUM_THREADS=${OMP_NUM_THREADS}"
 
 #modify the sw4 input file to output to the burst buffer
-echo $DW_JOB_STRIPED
+echo $DW_PERSISTENT_STRIPED_sw4output
 #python modsw4input.py $DW_JOB_STRIPED $RUN.sw4input
 #sed -i -e "s/path=/path=${TEST}/g" burstBufferTest.sw4input
 #include the rupture file
@@ -61,8 +62,9 @@ echo RUN: $RUN
 cp $RUN.sw4input $RUN
 cp $RUPTURE $RUN
 cd $RUN
+
 #make sure that sw4 saves to the burst buffer
-sed -i -e "s#path=#path=$DW_JOB_STRIPED #" $RUN.sw4input
+sed -i -e "s#path=#path=$DW_PERSISTENT_STRIPED_sw4output #" $RUN.sw4input
 #make sure that sw4 reads the rupture file
 sed -i -e "s#rupture file=#rupture file=/tmp/$RUPTURE #" $RUN.sw4input
 
