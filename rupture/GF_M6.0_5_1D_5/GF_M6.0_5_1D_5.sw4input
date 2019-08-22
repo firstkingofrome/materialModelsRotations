@@ -41,43 +41,47 @@ block z1=25000.0 vp=7800.0 vs=4400.0 rho=3300.0 qp=440.0 qs=220.0
 rupture file=
 prefilter fc2=10.625 type=lowpass passes=2 order=2
 
-# ESSI
+# ESSI 400M3 container
 essioutput file=Location1 xmin=8000 xmax=8400 ymin=2000 ymax=2400 depth=400
-essioutput file=Location2 xmin=8000 xmax=8400 ymin=4000 ymax=4400 depth=400
-essioutput file=Location3 xmin=8000 xmax=8400 ymin=6000 ymax=6400 depth=400
-essioutput file=Location4 xmin=8000 xmax=8400 ymin=8000 ymax=8400 depth=400
-essioutput file=Location5 xmin=8000 xmax=8400 ymin=10000 ymax=10400 depth=400
-essioutput file=Location6 xmin=8000 xmax=8400 ymin=12000 ymax=12400 depth=400
-essioutput file=Location7 xmin=8000 xmax=8400 ymin=14000 ymax=14400 depth=400
-essioutput file=Location8 xmin=8000 xmax=8400 ymin=16000 ymax=16400 depth=400
-essioutput file=Location9 xmin=8000 xmax=8400 ymin=18000 ymax=18400 depth=400
-essioutput file=Location10 xmin=6000 xmax=6400 ymin=2000 ymax=2400 depth=400
-essioutput file=Location11 xmin=6000 xmax=6400 ymin=4000 ymax=4400 depth=400
-essioutput file=Location12 xmin=6000 xmax=6400 ymin=6000 ymax=6400 depth=400
-essioutput file=Location13 xmin=6000 xmax=6400 ymin=8000 ymax=8400 depth=400
-essioutput file=Location14 xmin=6000 xmax=6400 ymin=10000 ymax=10400 depth=400
-essioutput file=Location15 xmin=6000 xmax=6400 ymin=12000 ymax=12400 depth=400
-essioutput file=Location16 xmin=6000 xmax=6400 ymin=14000 ymax=14400 depth=400
-essioutput file=Location17 xmin=6000 xmax=6400 ymin=16000 ymax=16400 depth=400
-essioutput file=Location18 xmin=6000 xmax=6400 ymin=18000 ymax=18400 depth=400
-essioutput file=Location19 xmin=4000 xmax=4400 ymin=2000 ymax=2400 depth=400
-essioutput file=Location20 xmin=4000 xmax=4400 ymin=4000 ymax=4400 depth=400
-essioutput file=Location21 xmin=4000 xmax=4400 ymin=6000 ymax=6400 depth=400
-essioutput file=Location22 xmin=4000 xmax=4400 ymin=8000 ymax=8400 depth=400
-essioutput file=Location23 xmin=4000 xmax=4400 ymin=10000 ymax=10400 depth=400
-essioutput file=Location24 xmin=4000 xmax=4400 ymin=12000 ymax=12400 depth=400
-essioutput file=Location25 xmin=4000 xmax=4400 ymin=14000 ymax=14400 depth=400
-essioutput file=Location26 xmin=4000 xmax=4400 ymin=16000 ymax=16400 depth=400
-essioutput file=Location27 xmin=4000 xmax=4400 ymin=18000 ymax=18400 depth=400
-essioutput file=Location28 xmin=2000 xmax=2400 ymin=2000 ymax=2400 depth=400
-essioutput file=Location29 xmin=2000 xmax=2400 ymin=4000 ymax=4400 depth=400
-essioutput file=Location30 xmin=2000 xmax=2400 ymin=6000 ymax=6400 depth=400
-essioutput file=Location31 xmin=2000 xmax=2400 ymin=8000 ymax=8400 depth=400
-essioutput file=Location32 xmin=2000 xmax=2400 ymin=10000 ymax=10400 depth=400
-essioutput file=Location33 xmin=2000 xmax=2400 ymin=12000 ymax=12400 depth=400
-essioutput file=Location34 xmin=2000 xmax=2400 ymin=14000 ymax=14400 depth=400
-essioutput file=Location35 xmin=2000 xmax=2400 ymin=16000 ymax=16400 depth=400
-essioutput file=Location36 xmin=2000 xmax=2400 ymin=18000 ymax=18400 depth=400
+
+#ESSI 200M3 container
+essioutput file=Location1 xmin=8000 xmax=8200 ymin=2000 ymax=2200 depth=200
+essioutput file=Location2 xmin=8000 xmax=8200 ymin=4000 ymax=4200 depth=200
+essioutput file=Location3 xmin=8000 xmax=8200 ymin=6000 ymax=6200 depth=200
+essioutput file=Location4 xmin=8000 xmax=8200 ymin=8000 ymax=8200 depth=200
+essioutput file=Location5 xmin=8000 xmax=8200 ymin=10000 ymax=10200 depth=200
+essioutput file=Location6 xmin=8000 xmax=8200 ymin=12000 ymax=12200 depth=200
+essioutput file=Location7 xmin=8000 xmax=8200 ymin=14000 ymax=14200 depth=200
+essioutput file=Location8 xmin=8000 xmax=8200 ymin=16000 ymax=16200 depth=200
+essioutput file=Location9 xmin=8000 xmax=8200 ymin=18000 ymax=18200 depth=200
+essioutput file=Location10 xmin=6000 xmax=6200 ymin=2000 ymax=2200 depth=200
+essioutput file=Location11 xmin=6000 xmax=6200 ymin=4000 ymax=4200 depth=200
+essioutput file=Location12 xmin=6000 xmax=6200 ymin=6000 ymax=6200 depth=200
+essioutput file=Location13 xmin=6000 xmax=6200 ymin=8000 ymax=8200 depth=200
+essioutput file=Location14 xmin=6000 xmax=6200 ymin=10000 ymax=10200 depth=200
+essioutput file=Location15 xmin=6000 xmax=6200 ymin=12000 ymax=12200 depth=200
+essioutput file=Location16 xmin=6000 xmax=6200 ymin=14000 ymax=14200 depth=200
+essioutput file=Location17 xmin=6000 xmax=6200 ymin=16000 ymax=16200 depth=200
+essioutput file=Location18 xmin=6000 xmax=6200 ymin=18000 ymax=18200 depth=200
+essioutput file=Location19 xmin=4000 xmax=4200 ymin=2000 ymax=2200 depth=200
+essioutput file=Location20 xmin=4000 xmax=4200 ymin=4000 ymax=4200 depth=200
+essioutput file=Location21 xmin=4000 xmax=4200 ymin=6000 ymax=6200 depth=200
+essioutput file=Location22 xmin=4000 xmax=4200 ymin=8000 ymax=8200 depth=200
+essioutput file=Location23 xmin=4000 xmax=4200 ymin=10000 ymax=10200 depth=200
+essioutput file=Location24 xmin=4000 xmax=4200 ymin=12000 ymax=12200 depth=200
+essioutput file=Location25 xmin=4000 xmax=4200 ymin=14000 ymax=14200 depth=200
+essioutput file=Location26 xmin=4000 xmax=4200 ymin=16000 ymax=16200 depth=200
+essioutput file=Location27 xmin=4000 xmax=4200 ymin=18000 ymax=18200 depth=200
+essioutput file=Location28 xmin=2000 xmax=2200 ymin=2000 ymax=2200 depth=200
+essioutput file=Location29 xmin=2000 xmax=2200 ymin=4000 ymax=4200 depth=200
+essioutput file=Location30 xmin=2000 xmax=2200 ymin=6000 ymax=6200 depth=200
+essioutput file=Location31 xmin=2000 xmax=2200 ymin=8000 ymax=8200 depth=200
+essioutput file=Location32 xmin=2000 xmax=2200 ymin=10000 ymax=10200 depth=200
+essioutput file=Location33 xmin=2000 xmax=2200 ymin=12000 ymax=12200 depth=200
+essioutput file=Location34 xmin=2000 xmax=2200 ymin=14000 ymax=14200 depth=200
+essioutput file=Location35 xmin=2000 xmax=2200 ymin=16000 ymax=16200 depth=200
+essioutput file=Location36 xmin=2000 xmax=2200 ymin=18000 ymax=18200 depth=200
+
 
 #transect accross fault for rotational analyiss
 essioutput file=rotationTransect1 xmin=10 xmax=9000 ymin=1800 ymax=1810 depth=10

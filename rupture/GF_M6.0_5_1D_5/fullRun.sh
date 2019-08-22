@@ -1,8 +1,8 @@
 #!/bin/csh
 #SBATCH --account m3354
-#SBATCH -N 1024
+#SBATCH -N 356
 #SBATCH -S 4
-#SBATCH -t 720
+#SBATCH -t 820
 ##SBATCH -p regular 
 #SBATCH -q regular 
 #SBATCH -C knl,quad,cache
@@ -11,12 +11,11 @@
 #SBATCH --mail-type=begin,end,fail
 #SBATCH --mail-user=eeckert@nevada.unr.edu
 ## burst buffer request
-#BB create_persistent name=sw4output capacity=18000GB access_mode=striped type=scratch 
-#DW persistentdw name=sw4output
-#DW stage_out source=$DW_PERSISTENT_STRIPED_sw4output destination=/global/cscratch1/sd/eeckert/largeRuns/GF_M6.0_5_1D_5 type=directory 
+#DW jobdw capacity=4000GB access_mode=striped type=scratch 
+#DW stage_out source=$DW_JOB_STRIPED destination=/global/cscratch1/sd/eeckert/largeRuns/GF_M6.0_5_1D_5 type=directory 
 ## stage in the sw4 input files etc.
 # Set total number of nodes request (must match -N above)
-set NODES = 1024
+set NODES = 356
 #set the output directory and rupture directory (if applicable)
 set RUN = GF_M6.0_5_1D_5 
 set RUPTURE = m6.0-12.5x8.0.s005.v5.1.srf
@@ -54,7 +53,7 @@ echo NUMLC: $NUMLC
 echo "Running on ${NODES} nodes with ${TASKS} MPI ranks and OMP_NUM_THREADS=${OMP_NUM_THREADS}"
 
 #modify the sw4 input file to output to the burst buffer
-echo $DW_PERSISTENT_STRIPED_sw4output
+echo $DW_JOB_STRIPED
 #python modsw4input.py $DW_JOB_STRIPED $RUN.sw4input
 #sed -i -e "s/path=/path=${TEST}/g" burstBufferTest.sw4input
 #include the rupture file
@@ -64,14 +63,14 @@ cp $RUPTURE $RUN
 cd $RUN
 
 #make sure that sw4 saves to the burst buffer
-sed -i -e "s#path=#path=$DW_PERSISTENT_STRIPED_sw4output #" $RUN.sw4input
+sed -i -e "s#path=#path=$DW_JOB_STRIPED #" $RUN.sw4input
 #make sure that sw4 reads the rupture file
 sed -i -e "s#rupture file=#rupture file=/tmp/$RUPTURE #" $RUN.sw4input
 
 # SBCAST files to assigned nodes
-sbcast -f -F2 -t 600 --compress=lz4 $SW4BIN/$SW4FILE /tmp/$SW4FILE
-sbcast -f -F2 -t 600 --compress=lz4 ./$RUN.sw4input /tmp/$RUN.sw4input
-sbcast -f -F2 -t 600 --compress=lz4 ./$RUPTURE /tmp/$RUPTURE 
+sbcast -f -F2 -t 800 --compress=lz4 $SW4BIN/$SW4FILE /tmp/$SW4FILE
+sbcast -f -F2 -t 800 --compress=lz4 ./$RUN.sw4input /tmp/$RUN.sw4input
+sbcast -f -F2 -t 800 --compress=lz4 ./$RUPTURE /tmp/$RUPTURE 
 
 
 echo "Done sbcasting, preparing "

@@ -1,0 +1,1313 @@
+----------------------------------------------------------------
+            sw4 version 2.2-alpha
+
+ This program comes with ABSOLUTELY NO WARRANTY; released under GPL.
+ This is free software, and you are welcome to redistribute     
+ it under certain conditions, see LICENSE.txt for more details  
+----------------------------------------------------------------
+  Compiled on: Mon Aug 19 14:56:38 PDT 2019
+  By user:     houhun
+  Machine:     cori04
+  Compiler:    /opt/cray/pe/craype/2.5.18/bin/CC
+  3rd party include dir: /global/project/projectdirs/m3354/tang/knl//include, and library dir: /global/project/projectdirs/m3354/tang/knl//lib
+----------------------------------------------------------------
+
+Input file: /tmp/GF_M6.0_5_1D_5.sw4input
+Default Supergrid thickness has been tuned; # grid points = 30 grid sizes
+Default Supergrid damping coefficient has been tuned; damping coefficient = 2.00000000e-02
+
+* Processing the grid command...
+* Setting nx to 501 to be consistent with h=2.00000000e+01
+* Setting ny to 1001 to be consistent with h=2.00000000e+01
+* Setting nz to 1251 to be consistent with h=2.00000000e+01
+Extent of the computational domain xmax=1.00000000e+04 ymax=2.00000000e+04 zmax=2.50000000e+04
+
+*** No topography command found in input file. Using z=0 as free surface boundary ***
+
+
+Global grid sizes (without ghost points)
+Grid         h        Nx        Ny        Nz       Points
+   0        20       501      1001      1201    602302701
+   1        10      1001      2001        51    102153051
+   2         5      2001      4001       101    808606101
+Total number of grid points (without ghost points): 1.51306e+09
+
+Opened rupture file '/tmp/m6.0-12.5x8.0.s005.v5.1.srf'
+Version = 2.0
+Number of segments in header block: 1
+Seg #1: elon=-122.129, elat=37.7308, nstk=250, ndip=160, len=12.5, wid=8
+        stk=90, dip=90, dtop=1, shyp=-5, dhyp=6
+Number of point sources in data block: 40000
+Read npts=40000, made 35130 point moment tensor sources, nu1=35130, nu2=0, nu3=0
+
+
+   Execution time, reading input file 9.38249922e+00 seconds 
+  Using Bjorn's fast (parallel) IO library
+Assuming a PARALLEL file system
+Writing images from (up to) 32 procs
+Detected at least one boundary with supergrid conditions
+----------------------------------------------------
+ Making Directory: /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//
+		
+... Done!
+----------------------------------------------------
+Geographic and Cartesian coordinates of the corners of the computational grid:
+0: Lon= -1.222430e+02, Lat=3.768612e+01, x=-1.396984e-09, y=2.255547e-09
+1: Lon= -1.222421e+02, Lat=3.777621e+01, x=1.000000e+04, y=3.157766e-09
+2: Lon= -1.220151e+02, Lat=3.777453e+01, x=1.000000e+04, y=2.000000e+04
+3: Lon= -1.220163e+02, Lat=3.768444e+01, x=-5.355105e-09, y=2.000000e+04
+
+Considering all material blocks
+block command: outside = 1552106868, material = 24018003
+block command: outside = 1536094866, material = 40030005
+block command: outside = 1456034856, material = 120090015
+block command: outside = 1407998850, material = 168126021
+block command: outside = 1079746806, material = 496378065
+block command: outside = 1439941812, material = 136183059
+block command: outside = 1555073841, material = 21051030
+block command: outside = 1550548320, material = 25576551
+block command: outside = 1550548320, material = 25576551
+block command: outside = 1538010795, material = 38114076
+block command: outside = 1525473270, material = 50651601
+block command: outside = 1525473270, material = 50651601
+block command: outside = 1375022970, material = 201101901
+block command: outside = 1375022970, material = 201101901
+block command: outside = 1574118867, material = 2006004
+
+       ----------- Material properties ranges ---------------
+       2.00000000e+03 kg/m^3 <=  Density <= 3.30000000e+03 kg/m^3
+       1.60000000e+03 m/s    <=  Vp      <= 7.80000000e+03 m/s
+       4.25000000e+02 m/s    <=  Vs      <= 4.40000000e+03 m/s
+       1.66666667e+00        <=  Vp/Vs   <= 3.76470588e+00
+       3.61250000e+08 Pa     <=  mu      <= 6.38880000e+10 Pa
+       4.39750000e+09 Pa     <=  lambda  <= 7.29960000e+10 Pa
+       Using attenuation 
+       2.12000000e+01        <=  Qs      <= 2.20000000e+02  
+       4.25000000e+01        <=  Qp      <= 4.40000000e+02  
+       ------------------------------------------------------
+
+***** PPW = minVs/h/maxFrequency ********
+g=0, h=2.000000e+01, minVs/h=95 (Cartesian)
+g=1, h=1.000000e+01, minVs/h=120 (Cartesian)
+g=2, h=5.000000e+00, minVs/h=85 (Cartesian)
+
+
+*** Attenuation parameters calculated for 3 mechanisms,
+      max freq=1.000000e+01 [Hz], min_freq=1.000000e-01 [Hz], velo_freq=1.000000e+00 [Hz]
+
+omega[0]=6.283185e-01 omega[1]=6.283185e+00 omega[2]=6.283185e+01 
+omc[0]=6.283185e-01 omc[1]=1.986918e+00 omc[2]=6.283185e+00 omc[3]=1.986918e+01 omc[4]=6.283185e+01 
+
+  Assigned material properties
+*** computing the time step ***
+TIME accuracy order=4 CFL=1.30000000e+00 prel. time step=1.41058334e-03
+*** Initialized Images
+ Min source z-level: 1.025000e+03, max source z-level: 8.975000e+03
+Filter precursor = 2.540191e-01
+
+   Execution time, start up phase 1.98748291e+01 seconds 
+
+----------------------------------------
+          Setup time summary (average)
+SBP+SG      BndryWind  InitPath  SetElastic  EvalResol  ViscoElastic  CheckPnt     DT     Image     SrcPrep
+6.227e-05  1.022e-03  1.616e-03  9.357e-01  1.695e-03  5.985e+00  4.528e-06  2.375e+00  1.052e+01  5.194e-02  
+Running sw4 on 11392 processors, using 2 threads/processor...
+Writing output to directory: /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//
+Lowpass filtering all source time functions to corner frequency fc2=1.062500e+01
+
+***  Starting solve ***
+============================================================
+ Running program on 11392 MPI tasks using the following data: 
+
+ Start Time = 0 Goal Time = 30
+ Number of time steps = 21268 dt: 0.00141057
+
+============================================================
+ Global boundary conditions 
+      x=0    supergrid
+      x=xMax supergrid
+      y=0    supergrid
+      y=yMax supergrid
+      z=topo free surface
+      z=zMax supergrid
+
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.s.sw4img
+
+-----------------------------------------------------------------------
+  Total seismic moment (M0): 1.23966e+18 Nm 
+  Moment magnitude     (Mw): 5.99554
+  Number of moment sources 35130
+-----------------------------------------------------------------------
+  Initial data has been assigned
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=5.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=10.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=15.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=20.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=25.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=30.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.y=10000.s.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.p.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.rho.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.lon.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.lat.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=00000.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00000.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00000.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00000.z=0.uz.sw4img
+
+Reporting SW4 internal flags and settings:
+m_testing=no, twilight=no, point_source=no, moment_test=no, energy_test=no, lamb_test=no, rayleigh_test=no
+m_use_supergrid=yes
+End report of internal flags and settings
+
+
+   Execution time, initial data phase 3.731e+01 seconds 
+
+  Begin time stepping...
+Time step       1  t =   1.4105699e-03
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00071.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00071.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00071.z=0.uz.sw4img
+Time step     101  t =   1.4246756e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00142.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00142.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00142.z=0.uz.sw4img
+Time step     201  t =   2.8352454e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00213.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00213.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00213.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00284.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00284.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00284.z=0.uz.sw4img
+Time step     301  t =   4.2458153e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00354.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00354.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00354.z=0.uz.sw4img
+Time step     401  t =   5.6563852e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00425.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00425.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00425.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00496.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00496.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00496.z=0.uz.sw4img
+Time step     501  t =   7.0669550e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00567.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00567.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00567.z=0.uz.sw4img
+Time step     601  t =   8.4775249e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00638.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00638.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00638.z=0.uz.sw4img
+Time step     701  t =   9.8880948e-01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00709.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00709.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00709.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00780.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00780.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00780.z=0.uz.sw4img
+Time step     801  t =   1.1298665e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00851.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00851.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00851.z=0.uz.sw4img
+Time step     901  t =   1.2709235e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00922.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00922.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00922.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00993.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00993.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=00993.z=0.uz.sw4img
+Time step    1001  t =   1.4119804e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01063.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01063.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01063.z=0.uz.sw4img
+Time step    1101  t =   1.5530374e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01134.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01134.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01134.z=0.uz.sw4img
+Time step    1201  t =   1.6940944e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01205.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01205.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01205.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01276.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01276.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01276.z=0.uz.sw4img
+Time step    1301  t =   1.8351514e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01347.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01347.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01347.z=0.uz.sw4img
+Time step    1401  t =   1.9762084e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=01418.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01418.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01418.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01418.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01489.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01489.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01489.z=0.uz.sw4img
+Time step    1501  t =   2.1172654e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01560.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01560.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01560.z=0.uz.sw4img
+Time step    1601  t =   2.2583224e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01631.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01631.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01631.z=0.uz.sw4img
+Time step    1701  t =   2.3993793e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01701.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01701.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01701.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01772.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01772.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01772.z=0.uz.sw4img
+Time step    1801  t =   2.5404363e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01843.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01843.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01843.z=0.uz.sw4img
+Time step    1901  t =   2.6814933e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01914.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01914.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01914.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01985.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01985.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=01985.z=0.uz.sw4img
+Time step    2001  t =   2.8225503e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02056.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02056.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02056.z=0.uz.sw4img
+Time step    2101  t =   2.9636073e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02127.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02127.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02127.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02198.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02198.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02198.z=0.uz.sw4img
+Time step    2201  t =   3.1046643e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02269.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02269.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02269.z=0.uz.sw4img
+Time step    2301  t =   3.2457213e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02339.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02339.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02339.z=0.uz.sw4img
+Time step    2401  t =   3.3867783e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02410.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02410.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02410.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02481.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02481.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02481.z=0.uz.sw4img
+Time step    2501  t =   3.5278352e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02552.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02552.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02552.z=0.uz.sw4img
+Time step    2601  t =   3.6688922e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02623.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02623.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02623.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02694.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02694.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02694.z=0.uz.sw4img
+Time step    2701  t =   3.8099492e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02765.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02765.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02765.z=0.uz.sw4img
+Time step    2801  t =   3.9510062e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=02836.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02836.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02836.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02836.z=0.uz.sw4img
+Time step    2901  t =   4.0920632e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02907.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02907.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02907.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02978.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02978.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=02978.z=0.uz.sw4img
+Time step    3001  t =   4.2331202e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03048.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03048.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03048.z=0.uz.sw4img
+Time step    3101  t =   4.3741772e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03119.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03119.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03119.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03190.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03190.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03190.z=0.uz.sw4img
+Time step    3201  t =   4.5152342e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03261.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03261.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03261.z=0.uz.sw4img
+Time step    3301  t =   4.6562911e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03332.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03332.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03332.z=0.uz.sw4img
+Time step    3401  t =   4.7973481e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03403.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03403.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03403.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03474.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03474.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03474.z=0.uz.sw4img
+Time step    3501  t =   4.9384051e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03545.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03545.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03545.z=0.uz.sw4img
+Time step    3601  t =   5.0794621e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03616.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03616.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03616.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03686.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03686.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03686.z=0.uz.sw4img
+Time step    3701  t =   5.2205191e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03757.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03757.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03757.z=0.uz.sw4img
+Time step    3801  t =   5.3615761e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03828.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03828.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03828.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03899.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03899.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03899.z=0.uz.sw4img
+Time step    3901  t =   5.5026331e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03970.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03970.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=03970.z=0.uz.sw4img
+Time step    4001  t =   5.6436901e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04041.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04041.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04041.z=0.uz.sw4img
+Time step    4101  t =   5.7847470e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04112.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04112.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04112.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04183.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04183.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04183.z=0.uz.sw4img
+Time step    4201  t =   5.9258040e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=04254.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04254.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04254.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04254.z=0.uz.sw4img
+Time step    4301  t =   6.0668610e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04324.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04324.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04324.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04395.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04395.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04395.z=0.uz.sw4img
+Time step    4401  t =   6.2079180e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04466.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04466.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04466.z=0.uz.sw4img
+Time step    4501  t =   6.3489750e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04537.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04537.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04537.z=0.uz.sw4img
+Time step    4601  t =   6.4900320e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04608.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04608.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04608.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04679.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04679.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04679.z=0.uz.sw4img
+Time step    4701  t =   6.6310890e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04750.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04750.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04750.z=0.uz.sw4img
+Time step    4801  t =   6.7721459e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04821.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04821.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04821.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04892.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04892.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04892.z=0.uz.sw4img
+Time step    4901  t =   6.9132029e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04963.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04963.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=04963.z=0.uz.sw4img
+Time step    5001  t =   7.0542599e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05033.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05033.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05033.z=0.uz.sw4img
+Time step    5101  t =   7.1953169e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05104.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05104.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05104.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05175.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05175.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05175.z=0.uz.sw4img
+Time step    5201  t =   7.3363739e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05246.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05246.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05246.z=0.uz.sw4img
+Time step    5301  t =   7.4774309e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05317.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05317.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05317.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05388.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05388.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05388.z=0.uz.sw4img
+Time step    5401  t =   7.6184879e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05459.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05459.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05459.z=0.uz.sw4img
+Time step    5501  t =   7.7595449e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05530.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05530.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05530.z=0.uz.sw4img
+Time step    5601  t =   7.9006018e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05601.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05601.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05601.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=05671.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05671.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05671.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05671.z=0.uz.sw4img
+Time step    5701  t =   8.0416588e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05742.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05742.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05742.z=0.uz.sw4img
+Time step    5801  t =   8.1827158e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05813.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05813.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05813.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05884.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05884.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05884.z=0.uz.sw4img
+Time step    5901  t =   8.3237728e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05955.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05955.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=05955.z=0.uz.sw4img
+Time step    6001  t =   8.4648298e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06026.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06026.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06026.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06097.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06097.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06097.z=0.uz.sw4img
+Time step    6101  t =   8.6058868e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06168.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06168.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06168.z=0.uz.sw4img
+Time step    6201  t =   8.7469438e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06239.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06239.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06239.z=0.uz.sw4img
+Time step    6301  t =   8.8880008e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06310.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06310.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06310.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06380.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06380.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06380.z=0.uz.sw4img
+Time step    6401  t =   9.0290577e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06451.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06451.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06451.z=0.uz.sw4img
+Time step    6501  t =   9.1701147e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06522.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06522.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06522.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06593.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06593.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06593.z=0.uz.sw4img
+Time step    6601  t =   9.3111717e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06664.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06664.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06664.z=0.uz.sw4img
+Time step    6701  t =   9.4522287e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06735.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06735.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06735.z=0.uz.sw4img
+Time step    6801  t =   9.5932857e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06806.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06806.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06806.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06877.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06877.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06877.z=0.uz.sw4img
+Time step    6901  t =   9.7343427e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06948.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06948.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=06948.z=0.uz.sw4img
+Time step    7001  t =   9.8753997e+00
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07018.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07018.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07018.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=07089.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07089.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07089.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07089.z=0.uz.sw4img
+Time step    7101  t =   1.0016457e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07160.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07160.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07160.z=0.uz.sw4img
+Time step    7201  t =   1.0157514e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07231.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07231.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07231.z=0.uz.sw4img
+Time step    7301  t =   1.0298571e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07302.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07302.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07302.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07373.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07373.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07373.z=0.uz.sw4img
+Time step    7401  t =   1.0439628e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07444.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07444.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07444.z=0.uz.sw4img
+Time step    7501  t =   1.0580685e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07515.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07515.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07515.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07586.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07586.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07586.z=0.uz.sw4img
+Time step    7601  t =   1.0721742e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07656.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07656.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07656.z=0.uz.sw4img
+Time step    7701  t =   1.0862799e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07727.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07727.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07727.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07798.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07798.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07798.z=0.uz.sw4img
+Time step    7801  t =   1.1003856e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07869.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07869.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07869.z=0.uz.sw4img
+Time step    7901  t =   1.1144913e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07940.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07940.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=07940.z=0.uz.sw4img
+Time step    8001  t =   1.1285970e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08011.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08011.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08011.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08082.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08082.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08082.z=0.uz.sw4img
+Time step    8101  t =   1.1427027e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08153.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08153.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08153.z=0.uz.sw4img
+Time step    8201  t =   1.1568084e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08224.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08224.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08224.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08295.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08295.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08295.z=0.uz.sw4img
+Time step    8301  t =   1.1709140e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08365.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08365.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08365.z=0.uz.sw4img
+Time step    8401  t =   1.1850197e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08436.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08436.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08436.z=0.uz.sw4img
+Time step    8501  t =   1.1991254e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=08507.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08507.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08507.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08507.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08578.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08578.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08578.z=0.uz.sw4img
+Time step    8601  t =   1.2132311e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08649.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08649.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08649.z=0.uz.sw4img
+Time step    8701  t =   1.2273368e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08720.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08720.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08720.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08791.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08791.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08791.z=0.uz.sw4img
+Time step    8801  t =   1.2414425e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08862.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08862.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08862.z=0.uz.sw4img
+Time step    8901  t =   1.2555482e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08933.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08933.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=08933.z=0.uz.sw4img
+Time step    9001  t =   1.2696539e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09003.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09003.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09003.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09074.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09074.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09074.z=0.uz.sw4img
+Time step    9101  t =   1.2837596e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09145.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09145.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09145.z=0.uz.sw4img
+Time step    9201  t =   1.2978653e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09216.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09216.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09216.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09287.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09287.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09287.z=0.uz.sw4img
+Time step    9301  t =   1.3119710e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09358.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09358.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09358.z=0.uz.sw4img
+Time step    9401  t =   1.3260767e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09429.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09429.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09429.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09500.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09500.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09500.z=0.uz.sw4img
+Time step    9501  t =   1.3401824e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09571.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09571.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09571.z=0.uz.sw4img
+Time step    9601  t =   1.3542881e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09641.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09641.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09641.z=0.uz.sw4img
+Time step    9701  t =   1.3683938e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09712.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09712.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09712.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09783.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09783.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09783.z=0.uz.sw4img
+Time step    9801  t =   1.3824995e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09854.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09854.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09854.z=0.uz.sw4img
+Time step    9901  t =   1.3966052e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=09925.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09925.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09925.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09925.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09996.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09996.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=09996.z=0.uz.sw4img
+Time step   10001  t =   1.4107109e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10067.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10067.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10067.z=0.uz.sw4img
+Time step   10101  t =   1.4248166e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10138.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10138.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10138.z=0.uz.sw4img
+Time step   10201  t =   1.4389223e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10209.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10209.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10209.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10280.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10280.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10280.z=0.uz.sw4img
+Time step   10301  t =   1.4530280e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10350.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10350.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10350.z=0.uz.sw4img
+Time step   10401  t =   1.4671337e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10421.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10421.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10421.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10492.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10492.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10492.z=0.uz.sw4img
+Time step   10501  t =   1.4812394e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10563.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10563.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10563.z=0.uz.sw4img
+Time step   10601  t =   1.4953451e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=10634.z=0.hmax.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10634.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10634.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10634.z=0.uz.sw4img
+Time step   10701  t =   1.5094508e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10705.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10705.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10705.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10776.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10776.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10776.z=0.uz.sw4img
+Time step   10801  t =   1.5235565e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10847.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10847.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10847.z=0.uz.sw4img
+Time step   10901  t =   1.5376622e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10918.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10918.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10918.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10988.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10988.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=10988.z=0.uz.sw4img
+Time step   11001  t =   1.5517679e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11059.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11059.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11059.z=0.uz.sw4img
+Time step   11101  t =   1.5658736e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11130.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11130.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11130.z=0.uz.sw4img
+Time step   11201  t =   1.5799793e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11201.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11201.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11201.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11272.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11272.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11272.z=0.uz.sw4img
+Time step   11301  t =   1.5940850e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=11343.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11343.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11343.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11343.z=0.uz.sw4img
+Time step   11401  t =   1.6081907e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11414.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11414.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11414.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11485.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11485.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11485.z=0.uz.sw4img
+Time step   11501  t =   1.6222964e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11556.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11556.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11556.z=0.uz.sw4img
+Time step   11601  t =   1.6364021e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11627.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11627.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11627.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11697.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11697.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11697.z=0.uz.sw4img
+Time step   11701  t =   1.6505078e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11768.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11768.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11768.z=0.uz.sw4img
+Time step   11801  t =   1.6646135e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11839.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11839.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11839.z=0.uz.sw4img
+Time step   11901  t =   1.6787192e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11910.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11910.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11910.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11981.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11981.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=11981.z=0.uz.sw4img
+Time step   12001  t =   1.6928249e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12052.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12052.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12052.z=0.uz.sw4img
+Time step   12101  t =   1.7069306e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12123.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12123.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12123.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12194.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12194.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12194.z=0.uz.sw4img
+Time step   12201  t =   1.7210363e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12265.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12265.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12265.z=0.uz.sw4img
+Time step   12301  t =   1.7351420e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12335.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12335.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12335.z=0.uz.sw4img
+Time step   12401  t =   1.7492477e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12406.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12406.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12406.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12477.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12477.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12477.z=0.uz.sw4img
+Time step   12501  t =   1.7633534e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12548.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12548.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12548.z=0.uz.sw4img
+Time step   12601  t =   1.7774591e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12619.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12619.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12619.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12690.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12690.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12690.z=0.uz.sw4img
+Time step   12701  t =   1.7915648e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=12761.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12761.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12761.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12761.z=0.uz.sw4img
+Time step   12801  t =   1.8056705e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12832.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12832.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12832.z=0.uz.sw4img
+Time step   12901  t =   1.8197762e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12903.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12903.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12903.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12973.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12973.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=12973.z=0.uz.sw4img
+Time step   13001  t =   1.8338819e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13044.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13044.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13044.z=0.uz.sw4img
+Time step   13101  t =   1.8479876e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13115.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13115.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13115.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13186.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13186.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13186.z=0.uz.sw4img
+Time step   13201  t =   1.8620933e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13257.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13257.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13257.z=0.uz.sw4img
+Time step   13301  t =   1.8761990e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13328.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13328.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13328.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13399.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13399.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13399.z=0.uz.sw4img
+Time step   13401  t =   1.8903047e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13470.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13470.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13470.z=0.uz.sw4img
+Time step   13501  t =   1.9044104e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13541.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13541.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13541.z=0.uz.sw4img
+Time step   13601  t =   1.9185161e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13612.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13612.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13612.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13682.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13682.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13682.z=0.uz.sw4img
+Time step   13701  t =   1.9326218e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13753.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13753.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13753.z=0.uz.sw4img
+Time step   13801  t =   1.9467275e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13824.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13824.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13824.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13895.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13895.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13895.z=0.uz.sw4img
+Time step   13901  t =   1.9608332e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13966.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13966.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=13966.z=0.uz.sw4img
+Time step   14001  t =   1.9749389e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14037.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14037.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14037.z=0.uz.sw4img
+Time step   14101  t =   1.9890446e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14108.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14108.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14108.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=14179.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14179.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14179.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14179.z=0.uz.sw4img
+Time step   14201  t =   2.0031503e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14250.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14250.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14250.z=0.uz.sw4img
+Time step   14301  t =   2.0172560e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14320.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14320.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14320.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14391.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14391.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14391.z=0.uz.sw4img
+Time step   14401  t =   2.0313617e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14462.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14462.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14462.z=0.uz.sw4img
+Time step   14501  t =   2.0454674e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14533.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14533.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14533.z=0.uz.sw4img
+Time step   14601  t =   2.0595731e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14604.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14604.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14604.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14675.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14675.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14675.z=0.uz.sw4img
+Time step   14701  t =   2.0736788e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14746.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14746.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14746.z=0.uz.sw4img
+Time step   14801  t =   2.0877845e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14817.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14817.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14817.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14888.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14888.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14888.z=0.uz.sw4img
+Time step   14901  t =   2.1018902e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14958.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14958.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=14958.z=0.uz.sw4img
+Time step   15001  t =   2.1159959e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15029.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15029.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15029.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15100.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15100.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15100.z=0.uz.sw4img
+Time step   15101  t =   2.1301016e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15171.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15171.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15171.z=0.uz.sw4img
+Time step   15201  t =   2.1442073e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15242.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15242.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15242.z=0.uz.sw4img
+Time step   15301  t =   2.1583130e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15313.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15313.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15313.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15384.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15384.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15384.z=0.uz.sw4img
+Time step   15401  t =   2.1724187e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15455.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15455.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15455.z=0.uz.sw4img
+Time step   15501  t =   2.1865244e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15526.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15526.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15526.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=15597.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15597.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15597.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15597.z=0.uz.sw4img
+Time step   15601  t =   2.2006301e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15667.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15667.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15667.z=0.uz.sw4img
+Time step   15701  t =   2.2147358e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15738.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15738.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15738.z=0.uz.sw4img
+Time step   15801  t =   2.2288415e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15809.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15809.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15809.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15880.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15880.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15880.z=0.uz.sw4img
+Time step   15901  t =   2.2429472e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=15951.z=0.hmax.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15951.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15951.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=15951.z=0.uz.sw4img
+Time step   16001  t =   2.2570528e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16022.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16022.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16022.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16093.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16093.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16093.z=0.uz.sw4img
+Time step   16101  t =   2.2711585e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16164.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16164.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16164.z=0.uz.sw4img
+Time step   16201  t =   2.2852642e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16235.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16235.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16235.z=0.uz.sw4img
+Time step   16301  t =   2.2993699e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16305.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16305.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16305.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16376.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16376.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16376.z=0.uz.sw4img
+Time step   16401  t =   2.3134756e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16447.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16447.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16447.z=0.uz.sw4img
+Time step   16501  t =   2.3275813e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16518.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16518.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16518.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16589.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16589.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16589.z=0.uz.sw4img
+Time step   16601  t =   2.3416870e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16660.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16660.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16660.z=0.uz.sw4img
+Time step   16701  t =   2.3557927e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16731.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16731.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16731.z=0.uz.sw4img
+Time step   16801  t =   2.3698984e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16802.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16802.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16802.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16873.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16873.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16873.z=0.uz.sw4img
+Time step   16901  t =   2.3840041e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16944.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16944.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=16944.z=0.uz.sw4img
+Time step   17001  t =   2.3981098e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=17014.z=0.hmax.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=17014.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17014.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17014.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17014.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17085.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17085.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17085.z=0.uz.sw4img
+Time step   17101  t =   2.4122155e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17156.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17156.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17156.z=0.uz.sw4img
+Time step   17201  t =   2.4263212e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17227.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17227.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17227.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17298.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17298.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17298.z=0.uz.sw4img
+Time step   17301  t =   2.4404269e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17369.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17369.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17369.z=0.uz.sw4img
+Time step   17401  t =   2.4545326e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17440.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17440.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17440.z=0.uz.sw4img
+Time step   17501  t =   2.4686383e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17511.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17511.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17511.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17582.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17582.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17582.z=0.uz.sw4img
+Time step   17601  t =   2.4827440e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17652.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17652.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17652.z=0.uz.sw4img
+Time step   17701  t =   2.4968497e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17723.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17723.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17723.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17794.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17794.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17794.z=0.uz.sw4img
+Time step   17801  t =   2.5109554e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17865.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17865.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17865.z=0.uz.sw4img
+Time step   17901  t =   2.5250611e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17936.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17936.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=17936.z=0.uz.sw4img
+Time step   18001  t =   2.5391668e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18007.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18007.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18007.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18078.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18078.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18078.z=0.uz.sw4img
+Time step   18101  t =   2.5532725e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18149.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18149.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18149.z=0.uz.sw4img
+Time step   18201  t =   2.5673782e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18220.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18220.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18220.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18290.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18290.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18290.z=0.uz.sw4img
+Time step   18301  t =   2.5814839e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18361.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18361.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18361.z=0.uz.sw4img
+Time step   18401  t =   2.5955896e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=18432.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18432.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18432.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18432.z=0.uz.sw4img
+Time step   18501  t =   2.6096953e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18503.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18503.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18503.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18574.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18574.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18574.z=0.uz.sw4img
+Time step   18601  t =   2.6238010e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18645.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18645.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18645.z=0.uz.sw4img
+Time step   18701  t =   2.6379067e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18716.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18716.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18716.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18787.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18787.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18787.z=0.uz.sw4img
+Time step   18801  t =   2.6520124e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18858.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18858.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18858.z=0.uz.sw4img
+Time step   18901  t =   2.6661181e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18929.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18929.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18929.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18999.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18999.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=18999.z=0.uz.sw4img
+Time step   19001  t =   2.6802238e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19070.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19070.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19070.z=0.uz.sw4img
+Time step   19101  t =   2.6943295e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=19141.z=0.hmax.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19141.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19141.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19141.z=0.uz.sw4img
+Time step   19201  t =   2.7084352e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19212.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19212.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19212.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19283.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19283.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19283.z=0.uz.sw4img
+Time step   19301  t =   2.7225409e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19354.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19354.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19354.z=0.uz.sw4img
+Time step   19401  t =   2.7366466e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19425.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19425.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19425.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19496.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19496.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19496.z=0.uz.sw4img
+Time step   19501  t =   2.7507523e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19567.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19567.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19567.z=0.uz.sw4img
+Time step   19601  t =   2.7648580e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19637.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19637.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19637.z=0.uz.sw4img
+Time step   19701  t =   2.7789637e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19708.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19708.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19708.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19779.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19779.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19779.z=0.uz.sw4img
+Time step   19801  t =   2.7930694e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=19850.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19850.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19850.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19850.z=0.uz.sw4img
+Time step   19901  t =   2.8071751e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19921.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19921.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19921.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19992.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19992.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=19992.z=0.uz.sw4img
+Time step   20001  t =   2.8212808e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20063.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20063.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20063.z=0.uz.sw4img
+Time step   20101  t =   2.8353865e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20134.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20134.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20134.z=0.uz.sw4img
+Time step   20201  t =   2.8494922e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20205.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20205.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20205.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20275.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20275.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20275.z=0.uz.sw4img
+Time step   20301  t =   2.8635979e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20346.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20346.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20346.z=0.uz.sw4img
+Time step   20401  t =   2.8777036e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20417.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20417.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20417.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20488.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20488.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20488.z=0.uz.sw4img
+Time step   20501  t =   2.8918093e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20559.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20559.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20559.z=0.uz.sw4img
+Time step   20601  t =   2.9059150e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20630.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20630.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20630.z=0.uz.sw4img
+Time step   20701  t =   2.9200207e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20701.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20701.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20701.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20772.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20772.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20772.z=0.uz.sw4img
+Time step   20801  t =   2.9341264e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20843.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20843.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20843.z=0.uz.sw4img
+Time step   20901  t =   2.9482321e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20914.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20914.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20914.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20984.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20984.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=20984.z=0.uz.sw4img
+Time step   21001  t =   2.9623378e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21055.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21055.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21055.z=0.uz.sw4img
+Time step   21101  t =   2.9764435e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21126.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21126.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21126.z=0.uz.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21197.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21197.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21197.z=0.uz.sw4img
+Time step   21201  t =   2.9905492e+01
+Time step   21268  t =   3.0000000e+01
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//image.cycle=21268.z=0.mag.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21268.z=0.ux.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21268.z=0.uy.sw4img
+writing image plane on file /var/opt/cray/dws/mounts/batch/24013650_striped_scratch//3D.cycle=21268.z=0.uz.sw4img
+  Time stepping finished...
+    ==> Max wallclock time to open/write ESSI hdf5 output is 9.877e+02 seconds 
+
+   Execution time, time stepping phase 2 hours 4 minutes 4.036e+01 seconds 
+
+----------------------------------------
+          Execution time summary (average)
+Total      Div-stress Forcing    BC         SG         Comm.      MR       Img+T-Series Updates    ESSI
+7.480e+03  2.137e+03  4.002e+01  2.725e+01  1.564e+02  1.363e+03  2.732e+03  2.628e+02  7.398e+02  2.197e+01  
+----------------------------------------
+
+============================================================
+ program sw4 finished! 
+============================================================
